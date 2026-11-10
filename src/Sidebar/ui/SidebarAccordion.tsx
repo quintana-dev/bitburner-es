@@ -11,6 +11,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { SidebarItem, ICreateProps as IItemProps, type SidebarItemProps } from "./SidebarItem";
 import type { Page } from "../../ui/Router";
 import type { PartialRecord } from "../../Types/Record";
+import { translateSidebar } from "../../localization/es/sidebar";
 
 type SidebarAccordionProps = {
   key_: string;
@@ -68,11 +69,11 @@ export function SidebarAccordion({
         () => (
           <ListItem classes={li_classes} button onClick={() => setOpen((open) => !open)}>
             <ListItemIcon>
-              <Tooltip title={!sidebarOpen ? key_ : ""}>
+              <Tooltip title={!sidebarOpen ? translateSidebar(key_) : ""}>
                 <Icon color={"primary"} />
               </Tooltip>
             </ListItemIcon>
-            <ListItemText primary={<Typography>{key_}</Typography>} />
+            <ListItemText primary={<Typography>{translateSidebar(key_)}</Typography>} />
             {open ? <ExpandLessIcon color="primary" /> : <ExpandMoreIcon color="primary" />}
           </ListItem>
         ),

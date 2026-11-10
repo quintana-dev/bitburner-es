@@ -7,6 +7,7 @@ import Tooltip from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
 
 import type { Page } from "../../ui/Router";
+import { translateSidebar } from "../../localization/es/sidebar";
 
 export interface ICreateProps {
   key_: Page;
@@ -35,13 +36,13 @@ export const SidebarItem = memo(function SidebarItem(props: SidebarItemProps): R
     >
       <ListItemIcon>
         <Badge badgeContent={(props.count ?? 0) > 0 ? props.count : undefined} color="error">
-          <Tooltip title={!props.sidebarOpen ? props.key_ : ""}>
+          <Tooltip title={!props.sidebarOpen ? translateSidebar(props.key_) : ""}>
             <props.icon color={color} />
           </Tooltip>
         </Badge>
       </ListItemIcon>
       <ListItemText>
-        <Typography color={color}>{props.key_}</Typography>
+        <Typography color={color}>{translateSidebar(props.key_)}</Typography>
       </ListItemText>
     </ListItem>
   );

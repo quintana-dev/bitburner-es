@@ -119,6 +119,7 @@ module.exports = (env, argv) => {
       !isDevServer &&
         new webpack.SourceMapDevToolPlugin({
           filename: "[file].map",
+          exclude: ["vendor"],
           columns: true,
           module: true,
         }),

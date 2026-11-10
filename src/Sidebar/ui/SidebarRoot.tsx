@@ -11,6 +11,7 @@ import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
 
 import ComputerIcon from "@mui/icons-material/Computer"; // Hacking
 import LastPageIcon from "@mui/icons-material/LastPage"; // Terminal
@@ -330,6 +331,45 @@ export function SidebarRoot(props: { page: Page }): React.ReactElement {
                 <Tooltip title={commitHash()}>
                   <Typography>Bitburner v{CONSTANTS.VersionString}</Typography>
                 </Tooltip>
+              }
+              secondary={
+                <Box sx={{ mt: 0.3 }}>
+                  <Typography
+                    variant="caption"
+                    component="div"
+                    sx={{
+                      color: "#6e7681",
+                      fontSize: "0.68rem",
+                      letterSpacing: "0.5px",
+                      display: "block",
+                      lineHeight: 1.2,
+                    }}
+                  >
+                    Versión en español por:
+                  </Typography>
+                  <a
+                    href="https://quintana.dev.ar"
+                    rel="noopener"
+                    target="_blank"
+                    style={{ textDecoration: "none", display: "inline-block", marginTop: "2px" }}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                    }}
+                  >
+                    <div
+                      style={{
+                        fontSize: "17px",
+                        fontWeight: 800,
+                        color: "#e6edf3",
+                        letterSpacing: "-0.3px",
+                        fontFamily: "inherit",
+                        lineHeight: 1.2,
+                      }}
+                    >
+                      quintana<span style={{ color: "#b845ff", textShadow: "0 0 8px rgba(184, 69, 255, 0.6)" }}>.dev</span>
+                    </div>
+                  </a>
+                </Box>
               }
             />
           </ListItem>
