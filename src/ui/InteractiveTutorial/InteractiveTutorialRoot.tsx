@@ -54,17 +54,17 @@ export function InteractiveTutorialRoot(): React.ReactElement {
       content: (
         <>
           <Typography>
-            Welcome to Bitburner, a cyberpunk-themed incremental RPG! The game takes place in a dark, dystopian
-            future... The year is 2077...
+            ¡Te damos la bienvenida a Bitburner, un juego de rol incremental de temática cyberpunk! El juego se desarrolla en un
+            futuro oscuro y distópico... El año es 2077...
             <br />
             <br />
-            This tutorial will show you the basics of the game. You may skip the tutorial at any time.
+            Este tutorial te mostrará los fundamentos del juego. Puedes omitirlo en cualquier momento.
             <br />
             <br />
-            You can replay this tutorial by going to the Options tab and pressing "Reset tutorial".
+            Puedes repetir este tutorial cuando quieras yendo a la pestaña de Opciones y seleccionando "Reiniciar tutorial".
             <br />
             <br />
-            You can also collapse this panel to temporarily hide this tutorial.
+            También puedes colapsar este panel para ocultar el tutorial temporalmente.
           </Typography>
         </>
       ),
@@ -73,13 +73,13 @@ export function InteractiveTutorialRoot(): React.ReactElement {
     [iTutorialSteps.GoToCharacterPage as number]: {
       content: (
         <>
-          <Typography>Let's start by heading to the Stats page. Click</Typography>
+          <Typography>Empecemos dirigiéndonos a la página de Estadísticas. Haz clic en</Typography>
           <ListItem>
             <EqualizerIcon color={"error"} />
-            <Typography color={"error"}>Stats</Typography>
+            <Typography color={"error"}>Estadísticas</Typography>
           </ListItem>
 
-          <Typography>on the main navigation menu (left-hand side of the screen)</Typography>
+          <Typography>en el menú de navegación principal (en el lateral izquierdo de la pantalla)</Typography>
         </>
       ),
       canNext: false,
@@ -89,10 +89,10 @@ export function InteractiveTutorialRoot(): React.ReactElement {
         <>
           <ListItem>
             <EqualizerIcon color={"primary"} />
-            <Typography color={"primary"}>Stats</Typography>
+            <Typography color={"primary"}>Estadísticas</Typography>
           </ListItem>
           <Typography>
-            shows a lot of important information about your progress, such as your skills, money, and bonuses.
+            muestra información crucial sobre tu progreso, como tus habilidades, dinero y multiplicadores de bonificación.
           </Typography>
         </>
       ),
@@ -101,12 +101,12 @@ export function InteractiveTutorialRoot(): React.ReactElement {
     [iTutorialSteps.CharacterGoToTerminalPage as number]: {
       content: (
         <>
-          <Typography>Let's head to your computer's terminal by clicking</Typography>
+          <Typography>Vamos a la terminal de tu computadora haciendo clic en</Typography>
           <ListItem>
             <LastPageIcon color={"error"} />
             <Typography color={"error"}>Terminal</Typography>
           </ListItem>
-          <Typography>on the main navigation menu.</Typography>
+          <Typography>en el menú de navegación principal.</Typography>
         </>
       ),
       canNext: false,
@@ -119,7 +119,7 @@ export function InteractiveTutorialRoot(): React.ReactElement {
             <Typography color={"primary"}>Terminal</Typography>
           </ListItem>
           <Typography>
-            is used to interface with your home computer as well as all of the other machines around the world.
+            se utiliza para comunicarte con tu computadora local así como con el resto de servidores del mundo.
           </Typography>
         </>
       ),
@@ -128,9 +128,9 @@ export function InteractiveTutorialRoot(): React.ReactElement {
     [iTutorialSteps.TerminalHelp as number]: {
       content: (
         <>
-          <Typography>Let's try it out. Start by entering</Typography>
+          <Typography>Vamos a probarla. Empieza ingresando:</Typography>
           <Typography classes={{ root: classes.textfield }}>{"[home /]> help"}</Typography>
-          <Typography>(Don't forget to press Enter after typing the command)</Typography>
+          <Typography>(No olvides pulsar Enter tras escribir el comando)</Typography>
         </>
       ),
       canNext: false,
@@ -140,15 +140,15 @@ export function InteractiveTutorialRoot(): React.ReactElement {
         <>
           <Typography classes={{ root: classes.textfield }}>{"[home /]> help"}</Typography>
           <Typography>
-            displays a list of all available Terminal commands, how to use them, and a description of what they do.{" "}
+            muestra una lista de todos los comandos de terminal disponibles, cómo utilizarlos y una descripción de su función.{" "}
             <br />
             <br />
-            Let's try another command. Enter
+            Probemos otro comando. Ingresa:
           </Typography>
 
           <Typography classes={{ root: classes.textfield }}>{"[home /]> ls"}</Typography>
           <Typography>
-            <br />( "ls" is short for "list" )
+            <br />( "ls" es la abreviatura de "list" )
           </Typography>
         </>
       ),
@@ -160,11 +160,11 @@ export function InteractiveTutorialRoot(): React.ReactElement {
           <Typography classes={{ root: classes.textfield }}>{"[home /]> ls"}</Typography>
           <Typography>
             {" "}
-            is a basic command that lists the files on the computer. Right now, it shows that you have a program called{" "}
-            NUKE.exe on your computer. We'll get to what this does later. <br />
+            es un comando básico que lista los archivos del equipo. Ahora mismo muestra que tienes un programa llamado{" "}
+            NUKE.exe en tu computadora. En breve veremos qué hace. <br />
             <br />
-            Using your home computer's terminal, you can connect to other machines throughout the world. Let's do that
-            now by first entering
+            Usando la terminal de tu máquina local, puedes conectarte a otros equipos en todo el mundo. Vamos a hacerlo
+            ahora ingresando:
           </Typography>
           <Typography classes={{ root: classes.textfield }}>{"[home /]> scan"}</Typography>
         </>
@@ -176,14 +176,14 @@ export function InteractiveTutorialRoot(): React.ReactElement {
         <>
           <Typography classes={{ root: classes.textfield }}>{"[home /]> scan"}</Typography>
           <Typography>
-            shows all available network connections. In other words, it displays a list of all servers that can be
-            connected to from your current machine. A server is identified by its hostname. <br />
+            muestra todas las conexiones de red disponibles. En otras palabras, lista los servidores a los que te puedes
+            conectar directamente desde tu máquina actual. Cada servidor se identifica por su nombre de host (hostname). <br />
             <br />
-            That's great and all, but there's so many servers. Which one should you go to?{" "}
+            Eso está muy bien, pero hay demasiados servidores. ¿A cuál deberías dirigirte?{" "}
           </Typography>
 
           <Typography classes={{ root: classes.textfield }}>{"[home /]> scan-analyze"}</Typography>
-          <Typography>gives some more detailed information about servers on the network. Try it now!</Typography>
+          <Typography>ofrece información más detallada sobre los servidores en la red. ¡Pruébalo ahora!</Typography>
         </>
       ),
       canNext: false,
@@ -193,10 +193,10 @@ export function InteractiveTutorialRoot(): React.ReactElement {
         <>
           <Typography classes={{ root: classes.textfield }}>{"[home /]> scan-analyze"}</Typography>
           <Typography>
-            shows more detailed information about each server that you can connect to (servers that are a distance of
-            one node away). <br />
-            <br /> It is also possible to run scan-analyze with a higher depth. Let's try a depth of two with the
-            following command:{" "}
+            muestra información detallada sobre cada servidor al que puedes conectarte (servidores a una distancia de
+            un nodo). <br />
+            <br /> También es posible ejecutar scan-analyze con mayor profundidad de red. Probemos con una profundidad de dos
+            mediante el comando:{" "}
           </Typography>
 
           <Typography classes={{ root: classes.textfield }}>{"[home /]> scan-analyze 2"}</Typography>
@@ -208,18 +208,18 @@ export function InteractiveTutorialRoot(): React.ReactElement {
       content: (
         <>
           <Typography>
-            Now you can see information about all servers that are up to two nodes away, as well as figure out how to
-            navigate to those servers through the network. You can only connect to a server that is one node away. To
-            connect to a machine, use
+            Ahora puedes ver información sobre todos los servidores a una distancia de hasta dos nodos, además de entender cómo
+            llegar a ellos a través de la red. Solo puedes conectarte directamente a un servidor que esté a un nodo de distancia. Para
+            conectarte a un equipo, utiliza:
           </Typography>
           <Typography classes={{ root: classes.textfield }}>{"[home /]> connect hostname"}</Typography>
 
-          <Typography>From the results of </Typography>
+          <Typography>A partir de los resultados de </Typography>
           <Typography classes={{ root: classes.textfield }}>{"[home /]> scan-analyze 2"}</Typography>
 
           <Typography>
             {" "}
-            we can see that the n00dles server is only one node away. Let's connect to it now using:
+            podemos ver que el servidor n00dles está a solo un nodo de distancia. Conectémonos a él ahora usando:
           </Typography>
 
           <Typography classes={{ root: classes.textfield }}>{"[home /]> connect n00dles"}</Typography>
@@ -231,13 +231,13 @@ export function InteractiveTutorialRoot(): React.ReactElement {
       content: (
         <>
           <Typography>
-            You are now connected to another machine! What can you do now? You can hack it!
+            ¡Ya estás conectado a otra máquina! ¿Qué podemos hacer ahora? ¡Hackearla!
             <br />
-            <br /> In the year 2077, currency has become digital and decentralized. People and corporations store their
-            money on servers and computers. Using your hacking abilities, you can hack servers to steal money and gain
-            experience. <br />
+            <br /> En el año 2077, el dinero se ha digitalizado y descentralizado por completo. Las personas y las corporaciones
+            almacenan sus fondos en servidores y computadoras. Empleando tus habilidades de hackeo, puedes penetrar en los servidores
+            para sustraer dinero y ganar experiencia. <br />
             <br />
-            Before you try to hack a server, you should run diagnostics using{" "}
+            Antes de intentar hackear un servidor, conviene ejecutar un diagnóstico con:{" "}
           </Typography>
           <Typography classes={{ root: classes.textfield }}>{"[n00dles /]> analyze"}</Typography>
         </>
@@ -247,22 +247,21 @@ export function InteractiveTutorialRoot(): React.ReactElement {
     [iTutorialSteps.TerminalNuke as number]: {
       content: (
         <>
-          <Typography>When </Typography>
+          <Typography>Cuando </Typography>
           <Typography classes={{ root: classes.textfield }}>{"[n00dles /]> analyze"}</Typography>
 
           <Typography>
-            finishes running it will show useful information about hacking the server. <br />
-            <br /> For this server, the required hacking skill is only 1, which means you can hack it right now.
-            However, in order to hack a server you must first gain root access. The NUKE.exe program that we saw earlier
-            on your home computer is a virus that will grant you root access to a machine if there are enough open
-            ports.
+            termine de ejecutarse mostrará información clave para hackear el servidor. <br />
+            <br /> Para este servidor, el nivel de habilidad de hackeo requerido es de solo 1, lo que significa que puedes hackearlo
+            ahora mismo. Sin embargo, para hackear un servidor primero necesitas obtener acceso root (administrador). El programa NUKE.exe
+            que vimos antes en tu computadora local es un virus que te otorgará acceso root a la máquina si cuenta con suficientes puertos abiertos.
           </Typography>
           <Typography classes={{ root: classes.textfield }}>{"[n00dles /]> analyze"}</Typography>
 
           <Typography>
             {" "}
-            shows that there do not need to be any open ports on this machine for the NUKE virus to work, so go ahead
-            and run the virus using{" "}
+            indica que en esta máquina no se requiere ningún puerto abierto para que el virus NUKE funcione, así que adelante y
+            ejecútalo con:{" "}
           </Typography>
           <Typography classes={{ root: classes.textfield }}>{"[n00dles /]> run NUKE.exe"}</Typography>
 
@@ -274,10 +273,10 @@ export function InteractiveTutorialRoot(): React.ReactElement {
     [iTutorialSteps.TerminalManualHack as number]: {
       content: (
         <>
-          <Typography>You now have root access! You can hack the server using </Typography>
+          <Typography>¡Ahora tienes acceso root! Puedes hackear el servidor usando: </Typography>
           <Typography classes={{ root: classes.textfield }}>{"[n00dles /]> hack"}</Typography>
 
-          <Typography> Try doing that now.</Typography>
+          <Typography> Inténtalo ahora.</Typography>
         </>
       ),
       canNext: true,
@@ -285,21 +284,21 @@ export function InteractiveTutorialRoot(): React.ReactElement {
     [iTutorialSteps.TerminalHackingMechanics as number]: {
       content: (
         <Typography component="div">
-          You are now attempting to hack the server. Performing a hack takes time and only has a certain percentage
-          chance of success. This time and success chance is determined by a variety of factors, including your hacking
-          skill and the server's security level.
+          Ahora estás hackeando el servidor. Realizar un hackeo requiere tiempo y tiene una probabilidad de éxito determinada.
+          Tanto el tiempo como la probabilidad dependen de varios factores, principalmente tu habilidad de hackeo y el nivel de seguridad
+          del servidor.
           <br />
           <br />
-          If your attempt to hack the server is successful, you will steal a certain percentage of the server's total
-          money. This percentage is affected by your hacking skill and the server's security level.
+          Si el intento de hackeo tiene éxito, robarás un porcentaje del dinero total del servidor. Dicho porcentaje depende de tu
+          habilidad y de la seguridad del objetivo.
           <br />
           <br />
-          The amount of money on a server is not limitless. So, if you constantly hack a server and deplete its money,
-          then you will encounter diminishing returns in your hacking. You will need to use{" "}
+          El dinero en un servidor no es infinito. Si hackeas constantemente un servidor hasta vaciarlo, experimentarás rendimientos decrecientes.
+          Para contrarrestarlo, necesitarás usar:{" "}
           <Typography classes={{ root: classes.textfield }}>{"[n00dles /]> grow"}</Typography>
-          which tricks the company into adding money to their server and{" "}
+          que engaña a la corporación para que inyecte más fondos en su servidor, y:{" "}
           <Typography classes={{ root: classes.textfield }}>{"[n00dles /]> weaken"}</Typography>
-          which increases the speed of hack and grow.
+          que reduce la seguridad del servidor y acelera la velocidad de hack y grow.
         </Typography>
       ),
       canNext: true,
@@ -307,10 +306,10 @@ export function InteractiveTutorialRoot(): React.ReactElement {
     [iTutorialSteps.TerminalGoHome as number]: {
       content: (
         <>
-          <Typography>From any server you can get back home using</Typography>
+          <Typography>Desde cualquier servidor puedes volver a tu equipo local usando:</Typography>
           <Typography classes={{ root: classes.textfield }}>{"[n00dles /]> home"}</Typography>
 
-          <Typography>Let's head home before creating our first script!</Typography>
+          <Typography>¡Regresemos a casa antes de crear nuestro primer script!</Typography>
         </>
       ),
       canNext: false,
@@ -319,16 +318,16 @@ export function InteractiveTutorialRoot(): React.ReactElement {
       content: (
         <>
           <Typography>
-            Hacking is the core mechanic of the game and is necessary for progressing. However, you don't want to be
-            hacking manually the entire time. You can automate your hacking by writing scripts!
+            El hackeo es la mecánica principal del juego y es indispensable para progresar. Sin embargo, no vas a querer
+            hackear manualmente todo el tiempo. ¡Puedes automatizar todo el proceso programando scripts!
             <br />
             <br />
-            To create a new script or edit an existing one, you can use{" "}
+            Para crear un script nuevo o modificar uno existente, utiliza:{" "}
           </Typography>
           <Typography classes={{ root: classes.textfield }}>{"[home /]> nano"}</Typography>
 
           <Typography>
-            Scripts must end with a script extension (.js, .jsx, .ts, .tsx). Let's make a script now by entering
+            Los scripts deben terminar con una extensión válida (.js, .jsx, .ts, .tsx). Creemos un script ahora escribiendo:
           </Typography>
           <Typography classes={{ root: classes.textfield }}>{`[home /]> nano ${tutorialScriptName}`}</Typography>
         </>
@@ -339,8 +338,8 @@ export function InteractiveTutorialRoot(): React.ReactElement {
       content: (
         <>
           <Typography>
-            This is the script editor. You can use it to program your scripts. Click this text to copy it and paste it
-            into the text editor:
+            Este es el editor de scripts. Puedes usarlo para programar tus herramientas. Haz clic sobre este código para copiarlo y
+            luego pégalo en el editor:
           </Typography>
           <br />
           <Typography component="div" classes={{ root: classes.code }}>
@@ -357,18 +356,16 @@ export async function main(ns) {
           </Typography>
           <br />
           <Typography>
-            For anyone with basic programming experience, this code should be straightforward. This script will
-            continuously hack the n00dles server.
+            Para cualquier persona con nociones elementales de programación, este código resultará directo. Este script hackeará en bucle continuo el servidor n00dles.
             <br />
             <br />
-            Use the search tool at the bottom to find and have a quick glance at documentation of any NS APIs.
+            Usa la herramienta de búsqueda en la parte inferior para consultar rápidamente la documentación de cualquier API de NS.
             <br />
             <br />
-            To access <DocumentationLink page={defaultNsApiPage}>NS API documentation</DocumentationLink>, press the
-            link at the bottom.
+            Para consultar la <DocumentationLink page={defaultNsApiPage}>documentación de la API de NS</DocumentationLink>, pulsa el enlace en la parte inferior.
             <br />
             <br />
-            To save and close the script editor, press the button at the bottom.
+            Para guardar y cerrar el editor de scripts, presiona el botón inferior.
           </Typography>
         </>
       ),
@@ -378,12 +375,12 @@ export async function main(ns) {
       content: (
         <>
           <Typography>
-            Now we'll run the script. Scripts require a certain amount of RAM to run, and can be run on any machine
-            which you have root access to. Different servers have different amounts of RAM. You can also purchase more
-            RAM for your home server.
+            Ahora ejecutaremos el script. Los scripts requieren cierta cantidad de memoria RAM para operar, y pueden correr en cualquier
+            máquina donde tengas acceso root. Distintos servidores disponen de diferentes cantidades de RAM. También puedes comprar más RAM
+            para tu servidor local (home).
             <br />
             <br />
-            To check how much RAM is available on this machine, enter
+            Para comprobar cuánta memoria RAM libre hay en esta máquina, ingresa:
           </Typography>
           <Typography classes={{ root: classes.textfield }}>{"[home /]> free"}</Typography>
         </>
@@ -394,7 +391,7 @@ export async function main(ns) {
       content: (
         <>
           <Typography>
-            We have 8GB of free RAM on this machine, which is enough to run our script. Let's run our script using
+            Disponemos de 8 GB de RAM libre en esta máquina, lo cual es suficiente para correr nuestro script. Ejecutémoslo con:
           </Typography>
           <Typography classes={{ root: classes.textfield }}>{`[home /]> run ${tutorialScriptName}`}</Typography>
         </>
@@ -405,17 +402,17 @@ export async function main(ns) {
       content: (
         <>
           <Typography>
-            Your script is now running! It will continuously run in the background and will automatically stop if the
-            code ever completes (the {tutorialScriptName} will never complete because it runs an infinite loop). <br />
+            ¡Tu script ya se está ejecutando! Operará continuamente en segundo plano y se detendrá solo si el código llega a concluir
+            (el script {tutorialScriptName} nunca terminará porque ejecuta un bucle infinito). <br />
             <br />
-            These scripts can passively earn you income and hacking experience. Your scripts will also earn money and
-            experience while you are offline, although at a slightly slower rate. <br />
+            Estos scripts te generarán ingresos y experiencia de hackeo de forma pasiva. Además, continuarán ganando dinero y
+            experiencia mientras estés desconectado del juego, aunque a una tasa ligeramente menor. <br />
             <br />
-            Let's check out some statistics for our running scripts by clicking{" "}
+            Revisemos las estadísticas de nuestros scripts en ejecución haciendo clic en:{" "}
           </Typography>
           <ListItem>
             <StorageIcon color={"error"} />
-            <Typography color={"error"}>Active Scripts</Typography>
+            <Typography color={"error"}>Scripts Activos</Typography>
           </ListItem>
         </>
       ),
@@ -425,17 +422,17 @@ export async function main(ns) {
       content: (
         <>
           <Typography>
-            This page displays information about all of your scripts that are running across every server. You can use
-            this to gauge how well your scripts are doing.
+            Esta pantalla muestra información sobre todos los scripts que tienes en funcionamiento a lo largo de cada servidor. Puedes
+            emplearla para medir el rendimiento de tus automatizaciones.
             <br />
             <br />
-            Click on Home to see the scripts running on it.
+            Haz clic en Home para visualizar los scripts que corren en él.
             <br />
             <br />
-            Then click on n00dles.js to see the scripts information.
+            Luego haz clic en n00dles.js para consultar la información del script.
             <br />
             <br />
-            Let's go back to
+            Regresemos a la:
           </Typography>
           <ListItem>
             <LastPageIcon color={"error"} />
@@ -449,8 +446,8 @@ export async function main(ns) {
       content: (
         <>
           <Typography>
-            One last thing about scripts, each active script contains logs that detail what it's doing. We can check
-            these logs using the tail command. Do that now for the script we just ran by typing{" "}
+            Un último detalle sobre los scripts: cada proceso activo genera un registro (log) que detalla sus operaciones. Podemos
+            consultar estos registros usando el comando tail. Hazlo ahora para el script que acabamos de iniciar escribiendo:{" "}
           </Typography>
           <Typography classes={{ root: classes.textfield }}>{`[home /]> tail ${tutorialScriptName}`}</Typography>
         </>
@@ -461,20 +458,20 @@ export async function main(ns) {
       content: (
         <>
           <Typography>
-            The log for this script won't show much right now (it might show nothing at all) because it just started
-            running...but check back again in a few minutes! <br />
+            El registro de este script mostrará muy poco por el momento (o podría estar vacío) dado que acaba de comenzar a ejecutarse...
+            ¡pero vuelve a revisarlo en un par de minutos! <br />
             <br />
-            This covers the basics of hacking. To learn more about writing scripts, select
+            Esto cubre los fundamentos del hackeo. Para aprender más sobre programación de scripts, selecciona:
           </Typography>
           <ListItem>
             <HelpIcon color={"primary"} />
-            <Typography color={"primary"}>Documentation</Typography>
+            <Typography color={"primary"}>Documentación</Typography>
           </ListItem>
           <Typography>
-            in the main navigation menu to look at the documentation.
+            en el menú de navegación principal para consultar las guías.
             <br />
             <br />
-            For now, let's move on to something else!
+            ¡Por ahora, pasemos a explorar otras áreas!
           </Typography>
         </>
       ),
@@ -484,14 +481,14 @@ export async function main(ns) {
       content: (
         <>
           <Typography>
-            Hacking is not the only way to earn money. One other way to passively earn money is by purchasing and
-            upgrading Hacknet Nodes. Let's go to
+            El hackeo no es la única vía para obtener dinero. Otra forma pasiva de generar ingresos es adquiriendo y mejorando
+            Nodos de Hacknet. Dirígete a:
           </Typography>
           <ListItem>
             <AccountTreeIcon color={"error"} />
             <Typography color={"error"}>Hacknet</Typography>
           </ListItem>
-          <Typography>through the main navigation menu now.</Typography>
+          <Typography>a través del menú de navegación principal.</Typography>
         </>
       ),
       canNext: false,
@@ -499,7 +496,7 @@ export async function main(ns) {
     [iTutorialSteps.HacknetNodesIntroduction as number]: {
       content: (
         <Typography>
-          Here you can purchase new Hacknet Nodes and upgrade your existing ones. Let's purchase a new one now.
+          Aquí puedes comprar nuevos Nodos de Hacknet y mejorar los que ya posees. Adquiramos uno nuevo ahora.
         </Typography>
       ),
       canNext: true,
@@ -508,15 +505,15 @@ export async function main(ns) {
       content: (
         <>
           <Typography>
-            You just purchased a Hacknet Node! This Hacknet Node will passively earn you money over time, both online
-            and offline. When you get enough money, you can upgrade your newly-purchased Hacknet Node below.
+            ¡Acabas de adquirir un Nodo de Hacknet! Este nodo te generará dinero pasivamente con el tiempo, tanto dentro del juego como
+            desconectado. Cuando acumules suficientes fondos, podrás mejorar tu nodo abajo.
             <br />
             <br />
-            Let's go to
+            Dirijámonos a:
           </Typography>
           <ListItem>
             <LocationCityIcon color={"error"} />
-            <Typography color={"error"}>City</Typography>
+            <Typography color={"error"}>Ciudad</Typography>
           </ListItem>
         </>
       ),
@@ -526,15 +523,15 @@ export async function main(ns) {
       content: (
         <>
           <Typography>
-            This page lists all of the different locations you can currently travel to. Each location has something that
-            you can do. There's a lot of content out in the world, make sure you explore and discover!
+            Esta página enumera todas las ubicaciones a las que puedes viajar actualmente. Cada lugar ofrece actividades e
+            interacciones específicas. Hay una enorme cantidad de contenido en el mundo, ¡asegúrate de explorar y descubrir!
             <br />
             <br />
-            Lastly, click on
+            Por último, haz clic en:
           </Typography>
           <ListItem>
             <HelpIcon color={"error"} />
-            <Typography color={"error"}>Documentation</Typography>
+            <Typography color={"error"}>Documentación</Typography>
           </ListItem>
         </>
       ),
@@ -543,40 +540,40 @@ export async function main(ns) {
     [iTutorialSteps.DocumentationPageInfo as number]: {
       content: (
         <Typography component="div">
-          This page contains a lot of different documentation about the game's contents and mechanics. I know it's a
-          lot, but I highly suggest you read (or at least skim) through this before you start playing. Some pages are
-          inaccessible at the start and will be unlocked later.
+          Esta sección alberga numerosa documentación sobre las mecánicas y contenidos del juego. Sabemos que es mucha información,
+          pero te recomendamos encarecidamente leerla (o al menos darle un vistazo) antes de sumergirte de lleno. Algunas páginas están
+          bloqueadas al inicio y se irán desbloqueando a medida que progreses.
           <br />
           <br />
-          If you click a link in these pages while holding Ctrl key (Control key on Mac keyboard), it will be opened in
-          a new tab. If you play the Steam version, that link will be opened in your default browser.
+          Si haces clic en un enlace de estas páginas manteniendo pulsada la tecla Ctrl (tecla Control en teclados Mac), se abrirá en
+          una pestaña nueva. Si juegas a la versión de Steam, el enlace se abrirá en tu navegador predeterminado.
           <br />
           <br />
-          You should at least check these pages:
+          Te recomendamos consultar en especial las siguientes secciones:
           <ul>
             <li>
-              The <DocumentationLink page="help/getting_started.md">Beginner's guide</DocumentationLink> contains the
-              guide for new players, navigating you through most of the early game.
+              La <DocumentationLink page="help/getting_started.md">Guía para principiantes</DocumentationLink> orienta a los nuevos
+              jugadores a través de la mayor parte del juego temprano.
             </li>
             <li>
-              The <DocumentationLink page={defaultNsApiPage}>NS API documentation</DocumentationLink> contains reference
-              materials for all NS APIs.
+              La <DocumentationLink page={defaultNsApiPage}>documentación de la API de NS</DocumentationLink> contiene las referencias
+              técnicas de todas las funciones de Netscript.
             </li>
             <li>
-              The <DocumentationLink page="help/faq.md">FAQ</DocumentationLink> contains questions often asked by
-              beginners of the game.
+              Las <DocumentationLink page="help/faq.md">Preguntas frecuentes (FAQ)</DocumentationLink> resuelven las dudas más comunes
+              al comenzar.
             </li>
           </ul>
           <Typography fontWeight="fontWeightBold">
-            This documentation page is the best place to get up-to-date information, especially when you get stuck. If
-            you have a question and cannot find the answer here, please ask us on Discord.
+            Esta página de documentación es el mejor lugar para obtener información actualizada, sobre todo si te quedas atascado. Si
+            tienes dudas y no encuentras la solución aquí, no dudes en consultarnos en Discord.
           </Typography>
           <br />
           <Typography color={Settings.theme.warning}>
-            The documentation at readthedocs is outdated and unmaintained. Do not use them!
+            La documentación en readthedocs está desactualizada y no recibe mantenimiento. ¡No la utilices!
           </Typography>
           <br />
-          That's the end of the tutorial. Hope you enjoy the game!
+          ¡Este es el final del tutorial! ¡Esperamos que disfrutes al máximo de Bitburner!
         </Typography>
       ),
       canNext: true,
@@ -603,12 +600,12 @@ export async function main(ns) {
           <>
             {step !== iTutorialSteps.Start && (
               <Button onClick={iTutorialPrevStep} aria-label="previous" style={{ marginRight: "1em" }}>
-                Previous
+                Anterior
               </Button>
             )}
             {(content.canNext || ITutorial.stepIsDone[step]) && (
               <Button onClick={iTutorialNextStep} aria-label="next">
-                Next
+                Siguiente
               </Button>
             )}
           </>
@@ -616,7 +613,7 @@ export async function main(ns) {
         <br />
         <br />
         <Button onClick={iTutorialEnd}>
-          {step !== iTutorialSteps.DocumentationPageInfo ? "Exit Tutorial" : "Finish Tutorial"}
+          {step !== iTutorialSteps.DocumentationPageInfo ? "Salir del Tutorial" : "Finalizar Tutorial"}
         </Button>
       </Paper>
     </>

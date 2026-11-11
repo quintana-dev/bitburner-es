@@ -26,13 +26,13 @@ function showMessage(name: MessageFilename): void {
   const msg = Messages[name];
   dialogBoxCreate(
     <>
-      Message received from unknown sender:
+      Mensaje recibido de remitente desconocido:
       <br />
       <br />
       <i>{msg.msg}</i>
       <br />
       <br />
-      This message was saved as {msg.filename} onto your home computer.
+      Este mensaje fue guardado como {msg.filename} en tu computadora local (home).
     </>,
   );
 }
@@ -97,47 +97,47 @@ const Messages: Record<MessageFilename, Message> = {
   //jump3R Messages
   [MessageFilename.Jumper0]: new Message(
     MessageFilename.Jumper0,
-    "I know you can sense it. I know you're searching for it. " +
-      "It's why you spend night after " +
-      "night at your computer. \n\nIt's real, I've seen it. And I can " +
-      "help you find it. But not right now. You're not ready yet.\n\n" +
-      "Use this program to track your progress\n\n" +
-      "The fl1ght.exe program was added to your home computer\n\n" +
+    "Sé que puedes sentirlo. Sé que lo estás buscando. " +
+      "Es la razón por la que pasas noche tras " +
+      "noche frente a tu computadora. \n\nEs real, yo lo he visto. Y puedo " +
+      "ayudarte a encontrarlo. Pero no ahora. Aún no estás listo.\n\n" +
+      "Usa este programa para seguir tu progreso:\n\n" +
+      "El programa fl1ght.exe fue añadido a tu computadora home.\n\n" +
       "-jump3R",
   ),
 
   [MessageFilename.Jumper1]: new Message(
     MessageFilename.Jumper1,
-    `Soon you will be contacted by a hacking group known as ${FactionName.CyberSec}. ` +
-      "They can help you with your search. \n\n" +
-      "You should join them, garner their favor, and " +
-      "exploit them for their Augmentations. But do not trust them. " +
-      "They are not what they seem. No one is.\n\n" +
+    `Pronto se pondrá en contacto contigo un grupo de hackers conocido como ${FactionName.CyberSec}. ` +
+      "Ellos pueden ayudarte en tu búsqueda. \n\n" +
+      "Deberías unirte a ellos, ganarte su favor y " +
+      "exprimirlos para conseguir sus Aumentos. Pero no confíes en ellos. " +
+      "No son lo que aparentan. Nadie lo es.\n\n" +
       "-jump3R",
     FactionName.CyberSec,
   ),
 
   [MessageFilename.Jumper2]: new Message(
     MessageFilename.Jumper2,
-    "Do not try to save the world. There is no world to save. If " +
-      "you want to find the truth, worry only about yourself. Ethics and " +
-      `morals will get you killed. \n\nKeep an eye out for a hacking group known as ${FactionName.NiteSec}.` +
+    "No intentes salvar el mundo. No hay ningún mundo que salvar. Si " +
+      "quieres encontrar la verdad, preocúpate únicamente por ti mismo. La ética y la " +
+      `moral solo conseguirán que te maten. \n\nMantente atento a un grupo de hackers conocido como ${FactionName.NiteSec}.` +
       "\n\n-jump3R",
     FactionName.NiteSec,
   ),
 
   [MessageFilename.Jumper3]: new Message(
     MessageFilename.Jumper3,
-    "You must learn to walk before you can run. And you must " +
-      `run before you can fly. Look for ${FactionName.TheBlackHand}. \n\n` +
+    "Debes aprender a caminar antes de poder correr. Y debes " +
+      `correr antes de poder volar. Busca a ${FactionName.TheBlackHand}. \n\n` +
       "I.I.I.I \n\n-jump3R",
     FactionName.TheBlackHand,
   ),
 
   [MessageFilename.Jumper4]: new Message(
     MessageFilename.Jumper4,
-    "To find what you are searching for, you must understand the bits. " +
-      "The bits are all around us. The runners will help you.\n\n" +
+    "Para encontrar lo que buscas, debes comprender los bits. " +
+      "Los bits están a nuestro alrededor. Los runners te ayudarán.\n\n" +
       "-jump3R",
     FactionName.BitRunners,
   ),
@@ -145,31 +145,31 @@ const Messages: Record<MessageFilename, Message> = {
   //Messages from hacking factions
   [MessageFilename.CyberSecTest]: new Message(
     MessageFilename.CyberSecTest,
-    "We've been watching you. Your skills are very impressive. But you're wasting " +
-      "your talents. If you join us, you can put your skills to good use and change " +
-      "the world for the better. If you join us, we can unlock your full potential. \n\n" +
-      "But first, you must pass our test. Find and install the backdoor on our server. \n\n" +
+    "Te hemos estado observando. Tus habilidades son muy impresionantes. Pero estás " +
+      "desperdiciando tu talento. Si te unes a nosotros, podrás darle un buen uso a tus capacidades y cambiar " +
+      "el mundo para mejor. Si te unes a nosotros, desbloquearemos todo tu potencial. \n\n" +
+      "Pero primero debes superar nuestra prueba. Encuentra e instala la puerta trasera (backdoor) en nuestro servidor. \n\n" +
       `-${FactionName.CyberSec}`,
     FactionName.CyberSec,
   ),
 
   [MessageFilename.NiteSecTest]: new Message(
     MessageFilename.NiteSecTest,
-    "People say that the corrupted governments and corporations rule the world. " +
-      "Yes, maybe they do. But do you know who everyone really fears? People " +
-      "like us. Because they can't hide from us. Because they can't fight shadows " +
-      "and ideas with bullets. \n\n" +
-      "Join us, and people will fear you, too. \n\n" +
-      "Find and install the backdoor on our server, avmnite-02h. Then, we will contact you again." +
+    "La gente dice que los gobiernos corruptos y las corporaciones gobiernan el mundo. " +
+      "Sí, tal vez sea así. ¿Pero sabes a quién le temen todos en realidad? A personas " +
+      "como nosotros. Porque no pueden esconderse de nosotros. Porque no pueden combatir sombras " +
+      "e ideas con balas. \n\n" +
+      "Únete a nosotros, y la gente también te temerá a ti. \n\n" +
+      "Encuentra e instala la puerta trasera (backdoor) en nuestro servidor, avmnite-02h. Luego, nos pondremos en contacto contigo de nuevo." +
       `\n\n-${FactionName.NiteSec}`,
     FactionName.NiteSec,
   ),
 
   [MessageFilename.BitRunnersTest]: new Message(
     MessageFilename.BitRunnersTest,
-    "We know what you are doing. We know what drives you. We know " +
-      "what you are looking for. \n\n " +
-      "We can help you find the answers.\n\n" +
+    "Sabemos lo que estás haciendo. Sabemos qué te motiva. Sabemos " +
+      "lo que estás buscando. \n\n " +
+      "Podemos ayudarte a encontrar las respuestas.\n\n" +
       "run4theh111z",
     FactionName.BitRunners,
   ),
