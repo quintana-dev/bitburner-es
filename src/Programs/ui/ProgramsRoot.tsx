@@ -60,11 +60,11 @@ export function ProgramsRoot(): React.ReactElement {
 
   return (
     <Container disableGutters maxWidth="lg" sx={{ mx: 0, mb: 10 }}>
-      <Typography variant="h4">Create program</Typography>
+      <Typography variant="h4">Crear programa</Typography>
       <Typography>
-        This page displays any programs that you are able to create. Writing the code for a program takes time, which
-        can vary based on how complex the program is. If you are working on creating a program you can cancel at any
-        time. Your progress will be saved and you can continue later.
+        Esta página muestra los programas que puedes crear. Escribir el código de un programa toma tiempo, el cual
+        varía según la complejidad del mismo. Si estás trabajando en la creación de un programa puedes cancelar en cualquier
+        momento. Tu progreso se guardará para continuar más adelante.
       </Typography>
 
       <Box sx={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", my: 1 }}>
@@ -98,7 +98,7 @@ export function ProgramsRoot(): React.ReactElement {
                         Router.toPage(Page.Work);
                       }}
                     >
-                      Resume focus
+                      Reanudar enfoque
                     </Button>
                   ) : (
                     //Button if the program is not currently worked on
@@ -114,25 +114,25 @@ export function ProgramsRoot(): React.ReactElement {
                         Router.toPage(Page.Work);
                       }}
                     >
-                      Create program
+                      Crear programa
                     </Button>
                   ))}
                 {Player.hasProgram(program.name) || hackingLevelRemaining === 0 || (
-                  <Tooltip title={<>Unlocks after you gain {hackingLevelRemaining} more hacking levels</>}>
+                  <Tooltip title={<>Se desbloquea al subir {hackingLevelRemaining} niveles más de hackeo</>}>
                     <Typography color={Settings.theme.hack}>
-                      <b>Unlocks at hacking level:</b> {Player.skills.hacking + hackingLevelRemaining}
+                      <b>Se desbloquea al nivel de hackeo:</b> {Player.skills.hacking + hackingLevelRemaining}
                     </Typography>
                   </Tooltip>
                 )}
                 {curCompletion !== -1 && (
                   <Typography color={Settings.theme.infolight}>
-                    <b>Current completion:</b> {curCompletion}%
+                    <b>Progreso actual:</b> {curCompletion}%
                   </Typography>
                 )}
                 {/*Displays the current completion of the program currently being created*/}
                 {isCreateProgramWork(Player.currentWork) && Player.currentWork.programName === program.name && (
                   <Typography color={Settings.theme.infolight}>
-                    <b>Current completion:</b>{" "}
+                    <b>Progreso actual:</b>{" "}
                     {((100 * Player.currentWork.unitCompleted) / Player.currentWork.unitNeeded()).toFixed(2)}%
                   </Typography>
                 )}

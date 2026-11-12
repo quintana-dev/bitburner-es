@@ -88,6 +88,18 @@ export function Val({ name, color }: ValProps): React.ReactElement {
   return <Typography color={color}>{formattedVals[name]()}</Typography>;
 }
 
+const overviewLabels: Record<string, string> = {
+  HP: "PV",
+  Money: "Dinero",
+  Hack: "Hack",
+  Str: "Fuer",
+  Def: "Def",
+  Dex: "Des",
+  Agi: "Agi",
+  Cha: "Car",
+  Int: "Int",
+};
+
 interface DataRowProps {
   name: keyof typeof formattedVals; //name for UI display
   showBar: boolean;
@@ -101,7 +113,7 @@ export function DataRow({ name, showBar, color, cellType }: DataRowProps): React
     <>
       <TableRow>
         <TableCell component="th" scope="row" classes={{ root: classes[cellType] }}>
-          <Typography color={color}>{name}&nbsp;</Typography>
+          <Typography color={color}>{(overviewLabels[name] ?? name)}&nbsp;</Typography>
         </TableCell>
         <TableCell align="right" classes={{ root: classes[cellType] }}>
           <Val name={name} color={color} />
@@ -179,7 +191,7 @@ export function CharacterOverview({ parentOpen, save, killScripts }: OverviewPro
       <Box sx={{ display: "flex", borderTop: `1px solid ${Settings.theme.welllight}` }}>
         <Box sx={{ display: "flex", flex: 1, justifyContent: "flex-start", alignItems: "center" }}>
           <IconButton aria-label="save game" onClick={save}>
-            <Tooltip title={Settings.AutosaveInterval !== 0 ? "Save game" : "Save game (auto-saves are disabled!)"}>
+            <Tooltip title={Settings.AutosaveInterval !== 0 ? "Guardar partida" : "Guardar partida (¡el autoguardado está desactivado!)"}>
               <SaveIcon color={Settings.AutosaveInterval !== 0 ? "primary" : "error"} />
             </Tooltip>
           </IconButton>
@@ -187,7 +199,7 @@ export function CharacterOverview({ parentOpen, save, killScripts }: OverviewPro
         <RemoteFileApiConnectionStatus showIcon={true} />
         <Box sx={{ display: "flex", flex: 1, justifyContent: "flex-end", alignItems: "center" }}>
           <IconButton aria-label="kill all scripts" onClick={() => setKillOpen(true)}>
-            <Tooltip title="Kill all running scripts">
+            <Tooltip title="Detener todos los scripts en ejecución">
               <ClearAllIcon color="error" />
             </Tooltip>
           </IconButton>
@@ -272,7 +284,7 @@ function WorkInProgressOverview({ tooltip, children, header }: WorkInProgressOve
           <TableRow>
             <TableCell component="th" scope="row" align="center" colSpan={2} classes={{ root: classes.cellNone }}>
               <Button sx={{ mt: 1 }} onClick={onClickFocusWork}>
-                Focus
+                Enfocar
               </Button>
             </TableCell>
           </TableRow>
@@ -300,18 +312,18 @@ function Work(): React.ReactElement {
     const perc = (Player.currentWork.unitCompleted / crime.time) * 100;
 
     details = <>{Player.currentWork.crimeType}</>;
-    header = <>You are attempting to {Player.currentWork.crimeType}</>;
+    header = <>Intentando {Player.currentWork.crimeType}</>;
     innerText = <>{perc.toFixed(2)}%</>;
   }
   if (isClassWork(Player.currentWork)) {
     details = <>{Player.currentWork.getClass().youAreCurrently}</>;
-    header = <>You are {Player.currentWork.getClass().youAreCurrently}</>;
+    header = <>Estás {Player.currentWork.getClass().youAreCurrently}</>;
     innerText = <>{convertTimeMsToTimeElapsedString(Player.currentWork.cyclesWorked * CONSTANTS.MilliPerCycle)}</>;
   }
   if (isCreateProgramWork(Player.currentWork)) {
     const create = Player.currentWork;
-    details = <>Coding {create.programName}</>;
-    header = <>Creating a program</>;
+    details = <>Programando {create.programName}</>;
+    header = <>Creando un programa</>;
     innerText = (
       <>
         {create.programName} {((create.unitCompleted / create.unitNeeded()) * 100).toFixed(2)}%
@@ -320,21 +332,21 @@ function Work(): React.ReactElement {
   }
   if (isGraftingWork(Player.currentWork)) {
     const graft = Player.currentWork;
-    details = <>Grafting {graft.augmentation}</>;
-    header = <>Grafting an Augmentation</>;
+    details = <>Injertando {graft.augmentation}</>;
+    header = <>Injertando un Aumento</>;
     innerText = (
       <>
-        <strong>{((graft.unitCompleted / graft.unitNeeded()) * 100).toFixed(2)}%</strong> done
+        <strong>{((graft.unitCompleted / graft.unitNeeded()) * 100).toFixed(2)}%</strong> completado
       </>
     );
   }
 
   if (isFactionWork(Player.currentWork)) {
     const factionWork = Player.currentWork;
-    details = <>Doing {factionWork.factionWorkType} work</>;
+    details = <>Haciendo trabajo de {factionWork.factionWorkType}</>;
     header = (
       <>
-        Working for <strong>{factionWork.factionName}</strong>
+        Trabajando para <strong>{factionWork.factionName}</strong>
       </>
     );
     innerText = (
@@ -353,7 +365,7 @@ function Work(): React.ReactElement {
 
     header = (
       <>
-        Working at <strong>{companyWork.companyName}</strong>
+        Trabajando en <strong>{companyWork.companyName}</strong>
       </>
     );
     innerText = (

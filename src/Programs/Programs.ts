@@ -50,7 +50,7 @@ export const Programs: Record<CompletedProgramName, Program> = {
     nsMethod: "nuke",
     create: {
       level: 1,
-      tooltip: "This virus is used to gain root access to a machine if enough ports are opened.",
+      tooltip: "Este virus se utiliza para obtener acceso root en una máquina si se abren suficientes puertos.",
       req: requireHackingLevel(1),
       time: CONSTANTS.MillisecondsPerFiveMinutes,
     },
@@ -80,7 +80,7 @@ export const Programs: Record<CompletedProgramName, Program> = {
     nsMethod: "brutessh",
     create: {
       level: 50,
-      tooltip: "This program executes a brute force attack that opens SSH ports",
+      tooltip: "Este programa ejecuta un ataque de fuerza bruta que abre puertos SSH",
       req: requireHackingLevel(50),
       time: CONSTANTS.MillisecondsPerFiveMinutes * 2,
     },
@@ -105,7 +105,7 @@ export const Programs: Record<CompletedProgramName, Program> = {
     nsMethod: "ftpcrack",
     create: {
       level: 100,
-      tooltip: "This program cracks open FTP ports",
+      tooltip: "Este programa vulnera y abre puertos FTP",
       req: requireHackingLevel(100),
       time: CONSTANTS.MillisecondsPerHalfHour,
     },
@@ -130,7 +130,7 @@ export const Programs: Record<CompletedProgramName, Program> = {
     nsMethod: "relaysmtp",
     create: {
       level: 250,
-      tooltip: "This program opens SMTP ports by redirecting data",
+      tooltip: "Este programa abre puertos SMTP redirigiendo datos",
       req: requireHackingLevel(250),
       time: CONSTANTS.MillisecondsPer2Hours,
     },
@@ -155,7 +155,7 @@ export const Programs: Record<CompletedProgramName, Program> = {
     nsMethod: "httpworm",
     create: {
       level: 500,
-      tooltip: "This virus opens up HTTP ports",
+      tooltip: "Este virus abre puertos HTTP",
       req: requireHackingLevel(500),
       time: CONSTANTS.MillisecondsPer4Hours,
     },
@@ -180,7 +180,7 @@ export const Programs: Record<CompletedProgramName, Program> = {
     nsMethod: "sqlinject",
     create: {
       level: 750,
-      tooltip: "This virus opens SQL ports",
+      tooltip: "Este virus abre puertos SQL",
       req: requireHackingLevel(750),
       time: CONSTANTS.MillisecondsPer8Hours,
     },
@@ -204,7 +204,7 @@ export const Programs: Record<CompletedProgramName, Program> = {
     name: CompletedProgramName.deepScan1,
     create: {
       level: 75,
-      tooltip: "This program allows you to use the scan-analyze command with a depth up to 5",
+      tooltip: "Este programa permite usar el comando scan-analyze con una profundidad de hasta 5",
       req: requireHackingLevel(75),
       time: CONSTANTS.MillisecondsPerQuarterHour,
     },
@@ -217,7 +217,7 @@ export const Programs: Record<CompletedProgramName, Program> = {
     name: CompletedProgramName.deepScan2,
     create: {
       level: 400,
-      tooltip: "This program allows you to use the scan-analyze command with a depth up to 10",
+      tooltip: "Este programa permite usar el comando scan-analyze con una profundidad de hasta 10",
       req: requireHackingLevel(400),
       time: CONSTANTS.MillisecondsPer2Hours,
     },
@@ -231,7 +231,7 @@ export const Programs: Record<CompletedProgramName, Program> = {
     nsMethod: "getServer",
     create: {
       level: 75,
-      tooltip: "This program is used to display hacking and Netscript-related information about servers",
+      tooltip: "Este programa muestra información de hackeo y de Netscript sobre los servidores",
       req: requireHackingLevel(75),
       time: CONSTANTS.MillisecondsPerHalfHour,
     },
@@ -280,7 +280,7 @@ export const Programs: Record<CompletedProgramName, Program> = {
     name: CompletedProgramName.autoLink,
     create: {
       level: 25,
-      tooltip: "This program allows you to directly connect to other servers through the 'scan-analyze' command",
+      tooltip: "Este programa permite conectarte directamente a otros servidores a través del comando 'scan-analyze'",
       req: requireHackingLevel(25),
       time: CONSTANTS.MillisecondsPerQuarterHour,
     },
@@ -294,7 +294,7 @@ export const Programs: Record<CompletedProgramName, Program> = {
     name: CompletedProgramName.formulas,
     create: {
       level: 1000,
-      tooltip: "This program allows you to use the formulas API",
+      tooltip: "Este programa desbloquea el uso de la API formulas",
       req: requireHackingLevel(1000),
       time: CONSTANTS.MillisecondsPer4Hours,
     },

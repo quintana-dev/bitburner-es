@@ -28,7 +28,7 @@ const EmployersModal = ({ open, onClose }: EmployersModalProps): React.ReactElem
   return (
     <Modal open={open} onClose={onClose}>
       <>
-        <Typography variant="h5">All Employers</Typography>
+        <Typography variant="h5">Todos los Empleadores</Typography>
         <ul>
           {Object.keys(Player.jobs).map((j) => (
             <Typography key={j}>* {j}</Typography>
@@ -127,7 +127,7 @@ function MoneyModal({ open, onClose }: IMoneyModalProps): React.ReactElement {
   function convertMoneySourceTrackerToString(src: MoneySourceTracker): React.ReactElement {
     const parts: [string, JSX.Element][] = [[`Total:`, <Money key="total" money={src.total} />]];
     if (src.augmentations) {
-      parts.push([`Augmentations:`, <Money key="aug" money={src.augmentations} />]);
+      parts.push([`Aumentos:`, <Money key="aug" money={src.augmentations} />]);
     }
     if (src.bladeburner) {
       parts.push([`Bladeburner:`, <Money key="blade" money={src.bladeburner} />]);
@@ -136,55 +136,55 @@ function MoneyModal({ open, onClose }: IMoneyModalProps): React.ReactElement {
       parts.push([`Casino:`, <Money key="casino" money={src.casino} />]);
     }
     if (src.codingcontract) {
-      parts.push([`Coding Contracts:`, <Money key="coding-contract" money={src.codingcontract} />]);
+      parts.push([`Contratos de Programación:`, <Money key="coding-contract" money={src.codingcontract} />]);
     }
     if (src.work) {
-      parts.push([`Company Work:`, <Money key="company-work" money={src.work} />]);
+      parts.push([`Trabajo en Empresa:`, <Money key="company-work" money={src.work} />]);
     }
     if (src.class) {
-      parts.push([`Class:`, <Money key="class" money={src.class} />]);
+      parts.push([`Cursos y Clases:`, <Money key="class" money={src.class} />]);
     }
     if (src.corporation) {
-      parts.push([`Corporation:`, <Money key="corp" money={src.corporation} />]);
+      parts.push([`Corporación:`, <Money key="corp" money={src.corporation} />]);
     }
     if (src.crime) {
-      parts.push([`Crimes:`, <Money key="crime" money={src.crime} />]);
+      parts.push([`Crímenes:`, <Money key="crime" money={src.crime} />]);
     }
     if (src.darknet) {
       parts.push([`Darknet:`, <Money key="darknet" money={src.darknet} />]);
     }
     if (src.gang) {
-      parts.push([`Gang:`, <Money key="gang" money={src.gang} />]);
+      parts.push([`Pandilla:`, <Money key="gang" money={src.gang} />]);
     }
     if (src.gang_expenses) {
-      parts.push([`Gang Expenses:`, <Money key="gang-expenses" money={src.gang_expenses} />]);
+      parts.push([`Gastos de Pandilla:`, <Money key="gang-expenses" money={src.gang_expenses} />]);
     }
     if (src.hacking) {
-      parts.push([`Hacking:`, <Money key="hacking" money={src.hacking} />]);
+      parts.push([`Hackeo:`, <Money key="hacking" money={src.hacking} />]);
     }
     if (src.hacknet) {
       parts.push([`Hacknet:`, <Money key="hacknet" money={src.hacknet} />]);
     }
     if (src.hacknet_expenses) {
-      parts.push([`Hacknet Expenses:`, <Money key="hacknet-expenses" money={src.hacknet_expenses} />]);
+      parts.push([`Gastos de Hacknet:`, <Money key="hacknet-expenses" money={src.hacknet_expenses} />]);
     }
     if (src.hospitalization) {
-      parts.push([`Hospitalization:`, <Money key="hospital" money={src.hospitalization} />]);
+      parts.push([`Hospitalización:`, <Money key="hospital" money={src.hospitalization} />]);
     }
     if (src.infiltration) {
-      parts.push([`Infiltration:`, <Money key="infiltration" money={src.infiltration} />]);
+      parts.push([`Infiltración:`, <Money key="infiltration" money={src.infiltration} />]);
     }
     if (src.servers) {
-      parts.push([`Servers:`, <Money key="servers" money={src.servers} />]);
+      parts.push([`Servidores:`, <Money key="servers" money={src.servers} />]);
     }
     if (src.stock) {
-      parts.push([`Stock Market:`, <Money key="market" money={src.stock} />]);
+      parts.push([`Bolsa de Valores:`, <Money key="market" money={src.stock} />]);
     }
     if (src.sleeves) {
-      parts.push([`Sleeves:`, <Money key="sleeves" money={src.sleeves} />]);
+      parts.push([`Mangas / Clones:`, <Money key="sleeves" money={src.sleeves} />]);
     }
     if (src.other) {
-      parts.push([`Other:`, <Money key="other" money={src.other} />]);
+      parts.push([`Otros:`, <Money key="other" money={src.other} />]);
     }
 
     return <StatsTable rows={parts} wide />;
@@ -193,7 +193,7 @@ function MoneyModal({ open, onClose }: IMoneyModalProps): React.ReactElement {
   let content = (
     <>
       <Typography variant="h6" color="primary">
-        Money earned since you last installed Augmentations
+        Dinero ganado desde la última instalación de Aumentos
       </Typography>
       <br />
       {convertMoneySourceTrackerToString(Player.moneySourceA)}
@@ -206,7 +206,7 @@ function MoneyModal({ open, onClose }: IMoneyModalProps): React.ReactElement {
         <br />
         <br />
         <Typography variant="h6" color="primary">
-          Money earned in this BitNode
+          Dinero ganado en este BitNode
         </Typography>
         <br />
         {convertMoneySourceTrackerToString(Player.moneySourceB)}
@@ -227,23 +227,23 @@ export function CharacterStats(): React.ReactElement {
   useCycleRerender();
 
   const timeRows = [
-    ["Since last Augmentation installation", convertTimeMsToTimeElapsedString(Player.playtimeSinceLastAug)],
+    ["Desde la última instalación de Aumentos", convertTimeMsToTimeElapsedString(Player.playtimeSinceLastAug)],
   ];
   if (knowAboutBitverse()) {
-    timeRows.push(["Since last Bitnode destroyed", convertTimeMsToTimeElapsedString(Player.playtimeSinceLastBitnode)]);
+    timeRows.push(["Desde el último BitNode destruido", convertTimeMsToTimeElapsedString(Player.playtimeSinceLastBitnode)]);
   }
   timeRows.push(["Total", convertTimeMsToTimeElapsedString(Player.totalPlaytime)]);
 
   return (
     <Container maxWidth="lg" disableGutters sx={{ mx: 0 }}>
-      <Typography variant="h4">Stats</Typography>
+      <Typography variant="h4">Estadísticas</Typography>
       <Box sx={{ display: "grid", gridTemplateColumns: "1fr 1fr", minWidth: "fit-content", mb: 1, gap: 1 }}>
         <Paper sx={{ p: 1 }}>
           <Typography variant="h5">General</Typography>
           <Table>
             <TableBody>
-              <StatsRow name="Current City" color={Settings.theme.primary} data={{ content: Player.city }} />
-              <StatsRow name="Money" color={Settings.theme.money} data={{}}>
+              <StatsRow name="Ciudad Actual" color={Settings.theme.primary} data={{ content: Player.city }} />
+              <StatsRow name="Dinero" color={Settings.theme.money} data={{}}>
                 <>
                   <Money money={Player.money} />
                   <IconButton onClick={() => setMoneyOpen(true)} sx={{ p: 0 }}>
@@ -253,7 +253,7 @@ export function CharacterStats(): React.ReactElement {
               </StatsRow>
 
               {Player.jobs && Object.keys(Player.jobs).length !== 0 ? (
-                <StatsRow name="All Employers" color={Settings.theme.primary} data={{}}>
+                <StatsRow name="Todos los Empleadores" color={Settings.theme.primary} data={{}}>
                   <>
                     <span style={{ color: Settings.theme.primary }}>{Object.keys(Player.jobs).length} total</span>
                     <IconButton onClick={() => setEmployersOpen(true)} sx={{ p: 0 }}>
@@ -265,12 +265,12 @@ export function CharacterStats(): React.ReactElement {
                 <></>
               )}
               <StatsRow
-                name="Cloud Servers"
+                name="Servidores en la Nube"
                 color={Settings.theme.primary}
                 data={{ content: `${Player.purchasedServers.length} / ${getCloudServerLimit()}` }}
               />
               <StatsRow
-                name={`Hacknet ${canAccessBitNodeFeature(9) ? "Servers" : "Nodes"}`}
+                name={`Hacknet ${canAccessBitNodeFeature(9) ? "Servidores" : "Nodos"}`}
                 color={Settings.theme.primary}
                 data={{
                   content: `${Player.hacknetNodes.length}${
@@ -279,7 +279,7 @@ export function CharacterStats(): React.ReactElement {
                 }}
               />
               <StatsRow
-                name="Augmentations Installed"
+                name="Aumentos Instalados"
                 color={Settings.theme.primary}
                 data={{ content: String(Player.augmentations.length) }}
               />
@@ -288,42 +288,42 @@ export function CharacterStats(): React.ReactElement {
           </Table>
         </Paper>
         <Paper sx={{ p: 1 }}>
-          <Typography variant="h5">Skills</Typography>
+          <Typography variant="h5">Habilidades</Typography>
           <Table>
             <TableBody>
               <StatsRow
-                name="Hacking"
+                name="Hackeo"
                 color={Settings.theme.hack}
                 data={{ level: Player.skills.hacking, exp: Player.exp.hacking }}
               />
               <StatsRow
-                name="Strength"
+                name="Fuerza"
                 color={Settings.theme.combat}
                 data={{ level: Player.skills.strength, exp: Player.exp.strength }}
               />
               <StatsRow
-                name="Defense"
+                name="Defensa"
                 color={Settings.theme.combat}
                 data={{ level: Player.skills.defense, exp: Player.exp.defense }}
               />
               <StatsRow
-                name="Dexterity"
+                name="Destreza"
                 color={Settings.theme.combat}
                 data={{ level: Player.skills.dexterity, exp: Player.exp.dexterity }}
               />
               <StatsRow
-                name="Agility"
+                name="Agilidad"
                 color={Settings.theme.combat}
                 data={{ level: Player.skills.agility, exp: Player.exp.agility }}
               />
               <StatsRow
-                name="Charisma"
+                name="Carisma"
                 color={Settings.theme.cha}
                 data={{ level: Player.skills.charisma, exp: Player.exp.charisma }}
               />
               {Player.skills.intelligence > 0 && canAccessBitNodeFeature(5) && (
                 <StatsRow
-                  name="Intelligence"
+                  name="Inteligencia"
                   color={Settings.theme.int}
                   data={{ level: Player.skills.intelligence, exp: Player.exp.intelligence }}
                 />
@@ -335,20 +335,20 @@ export function CharacterStats(): React.ReactElement {
 
       <Paper sx={{ p: 1, mb: 1 }}>
         <Typography variant="h5" color="primary" sx={{ display: "flex", alignItems: "center", flexWrap: "wrap" }}>
-          Multipliers
+          Multiplicadores
           {canAccessBitNodeFeature(5) && (
             <Tooltip
               title={
                 <Typography>
-                  Displays your current multipliers.
+                  Muestra tus multiplicadores actuales.
                   <br />
                   <br />
-                  When there is a dim number next to a multiplier, that means that the multiplier in question is being
-                  affected by BitNode multipliers.
+                  Cuando hay un número atenuado junto a un multiplicador, significa que está afectado por los
+                  multiplicadores del BitNode.
                   <br />
                   <br />
-                  The dim number is the raw multiplier, and the undimmed number is the effective multiplier, as dictated
-                  by the BitNode.
+                  El número atenuado es el multiplicador base, y el número brillante es el multiplicador efectivo impuesto
+                  por el BitNode.
                 </Typography>
               }
             >
@@ -361,21 +361,21 @@ export function CharacterStats(): React.ReactElement {
             <MultiplierTable
               rows={[
                 {
-                  mult: "Hacking Chance",
+                  mult: "Probabilidad de Hackeo",
                   value: Player.mults.hacking_chance,
                 },
                 {
-                  mult: "Hacking Speed",
+                  mult: "Velocidad de Hackeo",
                   value: Player.mults.hacking_speed,
                   effValue: Player.mults.hacking_speed * currentNodeMults.HackingSpeedMultiplier,
                 },
                 {
-                  mult: "Hacking Money",
+                  mult: "Dinero por Hackeo",
                   value: Player.mults.hacking_money,
                   effValue: Player.mults.hacking_money * currentNodeMults.ScriptHackMoney,
                 },
                 {
-                  mult: "Hacking Growth",
+                  mult: "Crecimiento por Hackeo",
                   value: Player.mults.hacking_grow,
                   effValue: Player.mults.hacking_grow * currentNodeMults.ServerGrowthRate,
                 },
@@ -385,12 +385,12 @@ export function CharacterStats(): React.ReactElement {
             <MultiplierTable
               rows={[
                 {
-                  mult: "Hacking Level",
+                  mult: "Nivel de Hackeo",
                   value: Player.mults.hacking,
                   effValue: Player.mults.hacking * currentNodeMults.HackingLevelMultiplier,
                 },
                 {
-                  mult: "Hacking Experience",
+                  mult: "Experiencia de Hackeo",
                   value: Player.mults.hacking_exp,
                   effValue: Player.mults.hacking_exp * currentNodeMults.HackExpGain,
                 },
@@ -400,12 +400,12 @@ export function CharacterStats(): React.ReactElement {
             <MultiplierTable
               rows={[
                 {
-                  mult: "Strength Level",
+                  mult: "Nivel de Fuerza",
                   value: Player.mults.strength,
                   effValue: Player.mults.strength * currentNodeMults.StrengthLevelMultiplier,
                 },
                 {
-                  mult: "Strength Experience",
+                  mult: "Experiencia de Fuerza",
                   value: Player.mults.strength_exp,
                 },
               ]}
@@ -414,12 +414,12 @@ export function CharacterStats(): React.ReactElement {
             <MultiplierTable
               rows={[
                 {
-                  mult: "Defense Level",
+                  mult: "Nivel de Defensa",
                   value: Player.mults.defense,
                   effValue: Player.mults.defense * currentNodeMults.DefenseLevelMultiplier,
                 },
                 {
-                  mult: "Defense Experience",
+                  mult: "Experiencia de Defensa",
                   value: Player.mults.defense_exp,
                 },
               ]}
@@ -428,12 +428,12 @@ export function CharacterStats(): React.ReactElement {
             <MultiplierTable
               rows={[
                 {
-                  mult: "Dexterity Level",
+                  mult: "Nivel de Destreza",
                   value: Player.mults.dexterity,
                   effValue: Player.mults.dexterity * currentNodeMults.DexterityLevelMultiplier,
                 },
                 {
-                  mult: "Dexterity Experience",
+                  mult: "Experiencia de Destreza",
                   value: Player.mults.dexterity_exp,
                 },
               ]}
@@ -442,12 +442,12 @@ export function CharacterStats(): React.ReactElement {
             <MultiplierTable
               rows={[
                 {
-                  mult: "Agility Level",
+                  mult: "Nivel de Agilidad",
                   value: Player.mults.agility,
                   effValue: Player.mults.agility * currentNodeMults.AgilityLevelMultiplier,
                 },
                 {
-                  mult: "Agility Experience",
+                  mult: "Experiencia de Agilidad",
                   value: Player.mults.agility_exp,
                 },
               ]}
@@ -456,12 +456,12 @@ export function CharacterStats(): React.ReactElement {
             <MultiplierTable
               rows={[
                 {
-                  mult: "Charisma Level",
+                  mult: "Nivel de Carisma",
                   value: Player.mults.charisma,
                   effValue: Player.mults.charisma * currentNodeMults.CharismaLevelMultiplier,
                 },
                 {
-                  mult: "Charisma Experience",
+                  mult: "Experiencia de Carisma",
                   value: Player.mults.charisma_exp,
                 },
               ]}
@@ -474,24 +474,24 @@ export function CharacterStats(): React.ReactElement {
             <MultiplierTable
               rows={[
                 {
-                  mult: "Hacknet Production",
+                  mult: "Producción de Hacknet",
                   value: Player.mults.hacknet_node_money,
                   effValue: Player.mults.hacknet_node_money * currentNodeMults.HacknetNodeMoney,
                 },
                 {
-                  mult: "Hacknet Purchase Cost",
+                  mult: "Coste de Compra Hacknet",
                   value: Player.mults.hacknet_node_purchase_cost,
                 },
                 {
-                  mult: "Hacknet RAM Upgrade Cost",
+                  mult: "Coste de Mejora de RAM Hacknet",
                   value: Player.mults.hacknet_node_ram_cost,
                 },
                 {
-                  mult: "Hacknet Core Purchase Cost",
+                  mult: "Coste de Núcleos Hacknet",
                   value: Player.mults.hacknet_node_core_cost,
                 },
                 {
-                  mult: "Hacknet Level Upgrade Cost",
+                  mult: "Coste de Niveles Hacknet",
                   value: Player.mults.hacknet_node_level_cost,
                 },
               ]}
@@ -500,19 +500,19 @@ export function CharacterStats(): React.ReactElement {
             <MultiplierTable
               rows={[
                 {
-                  mult: "Company Reputation Gain",
+                  mult: "Ganancia de Reputación en Empresas",
                   value: Player.mults.company_rep,
                   effValue: Player.mults.company_rep * currentNodeMults.CompanyWorkRepGain,
                   color: Settings.theme.rep,
                 },
                 {
-                  mult: "Faction Reputation Gain",
+                  mult: "Ganancia de Reputación en Facciones",
                   value: Player.mults.faction_rep,
                   effValue: Player.mults.faction_rep * currentNodeMults.FactionWorkRepGain,
                   color: Settings.theme.rep,
                 },
                 {
-                  mult: "Salary",
+                  mult: "Salario",
                   value: Player.mults.work_money,
                   effValue: Player.mults.work_money * currentNodeMults.CompanyWorkMoney,
                   color: Settings.theme.money,
@@ -523,12 +523,12 @@ export function CharacterStats(): React.ReactElement {
             <MultiplierTable
               rows={[
                 {
-                  mult: "Crime Success Chance",
+                  mult: "Probabilidad de Éxito en Crímenes",
                   value: Player.mults.crime_success,
                   effValue: Player.mults.crime_success * currentNodeMults.CrimeSuccessRate,
                 },
                 {
-                  mult: "Crime Money",
+                  mult: "Dinero por Crímenes",
                   value: Player.mults.crime_money,
                   effValue: Player.mults.crime_money * currentNodeMults.CrimeMoney,
                   color: Settings.theme.money,
@@ -539,7 +539,7 @@ export function CharacterStats(): React.ReactElement {
             <MultiplierTable
               rows={[
                 {
-                  mult: "Darknet Money",
+                  mult: "Dinero de Darknet",
                   value: Player.mults.dnet_money,
                   effValue: Player.mults.dnet_money * currentNodeMults.DarknetMoneyMultiplier,
                 },
@@ -592,7 +592,7 @@ export function CharacterStats(): React.ReactElement {
       </Paper>
 
       <Paper sx={{ p: 1, mb: 1 }}>
-        <Typography variant="h5">Time Played</Typography>
+        <Typography variant="h5">Tiempo Jugado</Typography>
         <Table>
           <TableBody>
             {timeRows.map(([name, content]) => (
@@ -606,7 +606,7 @@ export function CharacterStats(): React.ReactElement {
 
       {canAccessBitNodeFeature(5) && (
         <Paper sx={{ p: 1, mb: 1 }}>
-          <Typography variant="h5">BitNode Multipliers</Typography>
+          <Typography variant="h5">Multiplicadores del BitNode</Typography>
           <BitNodeMultipliersDisplay n={Player.bitNodeN} hideMultsIfCannotAccessFeature={true} />
         </Paper>
       )}

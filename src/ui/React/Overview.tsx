@@ -72,7 +72,7 @@ export function Overview({ children, mode }: IProps): React.ReactElement {
 
   const CurrentIcon = open ? KeyboardArrowUpIcon : KeyboardArrowDownIcon;
   const LeftIcon = mode === "tutorial" ? SchoolIcon : EqualizerIcon;
-  const header = mode === "tutorial" ? "Tutorial" : "Overview";
+  const header = mode === "tutorial" ? "Tutorial" : "Resumen";
   const handleStop: DraggableEventHandler = (e, data) => {
     setX(data.x);
     setY(data.y);
