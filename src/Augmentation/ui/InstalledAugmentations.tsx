@@ -57,16 +57,16 @@ export function InstalledAugmentations(): React.ReactElement {
   return (
     <Box sx={{ width: "100%" }}>
       <Paper sx={{ p: 1 }}>
-        <Typography variant="h5">Installed Augmentations</Typography>
+        <Typography variant="h5">Aumentos Instalados</Typography>
         <Box sx={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
-          <Tooltip title={"Sorts the Augmentations alphabetically in numeral order"}>
+          <Tooltip title={"Ordena los Aumentos alfabéticamente"}>
             <Button sx={{ width: "100%" }} onClick={sortInOrder}>
-              Sort in Order
+              Ordenar Alfabéticamente
             </Button>
           </Tooltip>
-          <Tooltip title={"Sorts the Augmentations based on when you acquired them (same as default)"}>
+          <Tooltip title={"Ordena los Aumentos según el momento en que los adquiriste"}>
             <Button sx={{ width: "100%" }} onClick={sortByAcquirementTime}>
-              Sort by Time of Acquirement
+              Ordenar por Adquisición
             </Button>
           </Tooltip>
         </Box>
@@ -114,7 +114,7 @@ export function InstalledAugmentations(): React.ReactElement {
         </Paper>
       ) : (
         <Paper sx={{ p: 1 }}>
-          <Typography>No Augmentations have been installed yet</Typography>
+          <Typography>Aún no se ha instalado ningún Aumento</Typography>
         </Paper>
       )}
     </Box>

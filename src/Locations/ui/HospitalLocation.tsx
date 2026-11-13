@@ -40,14 +40,14 @@ export function HospitalLocation(): React.ReactElement {
 
     dialogBoxCreate(
       <>
-        You were healed to full health! The hospital billed you for <Money money={cost} />
+        ¡Te has curado por completo! El hospital te ha facturado <Money money={cost} />
       </>,
     );
   }
 
   return (
     <Button onClick={getHealed} style={btnStyle}>
-      Get treatment for wounds - <Money money={getHospitalizationCost()} forPurchase={true} />
+      Recibir tratamiento para heridas - <Money money={getHospitalizationCost()} forPurchase={true} />
     </Button>
   );
 }

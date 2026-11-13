@@ -30,7 +30,7 @@ const PreReqs = (props: IPreReqsProps): React.ReactElement => {
       title={
         <>
           <Typography sx={{ color: Settings.theme.money }}>
-            This Augmentation has the following pre-requisite(s):
+            Este Aumento tiene los siguientes prerrequisito(s):
           </Typography>
           {props.aug.prereqs.map((preAug) => (
             <Requirement
@@ -57,12 +57,12 @@ const PreReqs = (props: IPreReqsProps): React.ReactElement => {
         {hasPreReqs ? (
           <>
             <CheckCircle fontSize="small" sx={{ mr: 1 }} />
-            Pre-requisites Owned
+            Prerrequisitos Adquiridos
           </>
         ) : (
           <>
             <Report fontSize="small" sx={{ mr: 1 }} />
-            Missing {props.aug.prereqs.length - ownedPreReqs.length} pre-requisite(s)
+            Faltan {props.aug.prereqs.length - ownedPreReqs.length} prerrequisito(s)
           </>
         )}
       </Typography>
@@ -80,23 +80,23 @@ const Exclusive = (props: IExclusiveProps): React.ReactElement => {
       title={
         <>
           <Typography sx={{ color: Settings.theme.money }}>
-            This Augmentation can only be acquired from the following source(s):
+            Este Aumento solo se puede obtener de las siguientes fuentes:
           </Typography>
           <ul>
             <Typography sx={{ color: Settings.theme.money }}>
               <li>
-                <b>{props.aug.factions[0]}</b> faction
+                Facción <b>{props.aug.factions[0]}</b>
               </li>
               {Player.isAwareOfGang() && !props.aug.isSpecial && (
                 <li>
-                  Certain <b>gangs</b>
+                  Ciertas <b>pandillas</b>
                 </li>
               )}
               {Player.canAccessGrafting() &&
                 (!props.aug.isSpecial || props.aug.factions.includes(FactionName.Bladeburners)) &&
                 props.aug.name !== AugmentationName.TheRedPill && (
                   <li>
-                    <b>Grafting</b>
+                    <b>Injertos</b>
                   </li>
                 )}
             </Typography>
@@ -200,7 +200,7 @@ export function PurchasableAugmentation(props: IPurchasableAugProps): React.Reac
             disabled={!props.parent.canPurchase(aug) || props.owned}
             sx={{ width: "48px", height: "36px", float: "left", clear: "none", mr: 1 }}
           >
-            {props.owned ? "Owned" : "Buy"}
+            {props.owned ? "Comprado" : "Comprar"}
           </Button>
 
           <Box sx={{ maxWidth: props.owned ? "100%" : "85%" }}>

@@ -29,17 +29,17 @@ const WorkTypesOffered = (props: { faction: Faction }): React.ReactElement => {
   return (
     <>
       {info.offerFieldWork && (
-        <Tooltip title="This Faction offers field work">
+        <Tooltip title="Esta Facción ofrece trabajo de campo">
           <Explore sx={{ color: Settings.theme.info, mr: marginRight }} fontSize={fontSize} />
         </Tooltip>
       )}
       {info.offerHackingWork && (
-        <Tooltip title="This Faction offers hacking work">
+        <Tooltip title="Esta Facción ofrece trabajo de hackeo">
           <LastPage sx={{ color: Settings.theme.hack, mr: marginRight }} fontSize={fontSize} />
         </Tooltip>
       )}
       {info.offerSecurityWork && (
-        <Tooltip title="This Faction offers security work">
+        <Tooltip title="Esta Facción ofrece trabajo de seguridad">
           <LocalPolice sx={{ color: Settings.theme.combat, mr: marginRight }} fontSize={fontSize} />
         </Tooltip>
       )}
@@ -114,12 +114,12 @@ const FactionElement = (props: FactionElementProps): React.ReactElement => {
               "& .MuiButton-root": { height: "48px" },
             }}
           >
-            <Button onClick={() => openFaction(props.faction)}>Details</Button>
-            <Button onClick={() => openFactionAugPage(props.faction)}>Augments</Button>
+            <Button onClick={() => openFaction(props.faction)}>Detalles</Button>
+            <Button onClick={() => openFactionAugPage(props.faction)}>Aumentos</Button>
           </Box>
         ) : props.faction.alreadyInvited ? (
           <Button sx={{ height: "48px", mr: 1 }} onClick={(e) => acceptInvitation(e, props.faction.name)}>
-            Join!
+            ¡Unirse!
           </Button>
         ) : null}
 
@@ -145,7 +145,7 @@ const FactionElement = (props: FactionElementProps): React.ReactElement => {
                 <span style={getStylesForFactionName(props.faction)}>{props.faction.name}</span>
               </Tooltip>
             ) : (
-              <Tooltip title={"Rumored Faction"}>
+              <Tooltip title={"Facción rumoreada"}>
                 <span style={getStylesForFactionName(props.faction)}>
                   <CorruptibleText content={props.faction.name} spoiler={false} />
                 </span>
@@ -154,13 +154,13 @@ const FactionElement = (props: FactionElementProps): React.ReactElement => {
 
             <span style={{ display: "flex", alignItems: "center" }}>
               {Player.hasGangWith(props.faction.name) && (
-                <Tooltip title="You have a gang with this Faction">
+                <Tooltip title="Tienes una pandilla con esta Facción">
                   <SportsMma sx={{ color: Settings.theme.hp, ml: 1 }} />
                 </Tooltip>
               )}
 
               {facInfo.special && (
-                <Tooltip title="This is a special Faction">
+                <Tooltip title="Esta es una Facción especial">
                   <NewReleases sx={{ ml: 1, color: Settings.theme.money, transform: "rotate(180deg)" }} />
                 </Tooltip>
               )}
@@ -169,13 +169,13 @@ const FactionElement = (props: FactionElementProps): React.ReactElement => {
                 <Tooltip
                   title={
                     <Typography component="div">
-                      This Faction is enemies with:
+                      Esta Facción es enemiga de:
                       <ul>
                         {facInfo.enemies.map((enemy) => (
                           <li key={enemy}>{enemy}</li>
                         ))}
                       </ul>
-                      {!props.faction.isMember && <>Joining this Faction will prevent you from joining its enemies</>}
+                      {!props.faction.isMember && <>Unirte a esta Facción te impedirá unirte a sus enemigas</>}
                     </Typography>
                   }
                 >
@@ -190,8 +190,8 @@ const FactionElement = (props: FactionElementProps): React.ReactElement => {
               <>
                 {!Player.hasGangWith(props.faction.name) && <WorkTypesOffered faction={props.faction} />}
                 <Typography variant="body2" sx={{ display: "flex", whiteSpace: "nowrap" }}>{`${
-                  augsLeft || "No"
-                } Augmentations left`}</Typography>
+                  augsLeft || "Sin"
+                } Aumentos restantes`}</Typography>
               </>
             ) : (
               <Typography variant="body2" component="div">
@@ -234,13 +234,13 @@ export function FactionsRoot(): React.ReactElement {
   return (
     <Container disableGutters maxWidth="lg" sx={{ mx: 0, mb: 10 }}>
       <Typography variant="h4">
-        Factions
+        Facciones
         <Tooltip
           title={
             <Typography>
-              Throughout the game you may receive invitations from factions. There are many different factions, and each
-              faction has different criteria for determining its potential members. Joining a faction and furthering its
-              cause is crucial to progressing in the game and unlocking endgame content.
+              A lo largo del juego puedes recibir invitaciones de facciones. Hay muchas facciones distintas y cada una
+              tiene criterios diferentes para seleccionar a sus miembros. Unirte a una facción y servir a su causa es
+              fundamental para progresar en el juego y desbloquear el contenido final.
             </Typography>
           }
         >
@@ -266,7 +266,7 @@ export function FactionsRoot(): React.ReactElement {
           {invitedFactions.length > 0 && (
             <>
               <Typography variant="h5" color="primary">
-                Faction Invitations
+                Invitaciones de Facción
               </Typography>
               <Box>
                 {invitedFactions.map((faction) => (
@@ -281,7 +281,7 @@ export function FactionsRoot(): React.ReactElement {
           {Player.inGang() && (
             <>
               <Typography variant="h5" color="primary">
-                Your Gang
+                Tu Pandilla
               </Typography>
               <Box>
                 <FactionElement key={Player.getGangName()} faction={Player.getGangFaction()} rerender={rerender} />
@@ -289,7 +289,7 @@ export function FactionsRoot(): React.ReactElement {
             </>
           )}
           <Typography variant="h5" color="primary">
-            Your Factions
+            Tus Facciones
           </Typography>
           <Box>
             {joinedFactions.length > 0 ? (
@@ -298,14 +298,14 @@ export function FactionsRoot(): React.ReactElement {
                 return <FactionElement key={faction.name} faction={faction} rerender={rerender} />;
               })
             ) : (
-              <Typography>You have not yet joined any Factions.</Typography>
+              <Typography>Aún no te has unido a ninguna Facción.</Typography>
             )}
           </Box>
         </span>
       </Box>
       <div style={{ margin: "15px 0" }}>
         <Typography variant="h5" color="primary">
-          Share RAM
+          Compartir RAM
         </Typography>
         <ShareOption rerender={rerender} />
       </div>
@@ -313,7 +313,7 @@ export function FactionsRoot(): React.ReactElement {
         {rumoredFactions.length > 0 && (
           <>
             <Typography variant="h5" color="primary">
-              Rumors
+              Rumores
             </Typography>
             <Box style={{ display: "grid", gap: 1, gridAutoRows: "minmax(70px, auto)" }}>
               {rumoredFactions.map((faction) => (

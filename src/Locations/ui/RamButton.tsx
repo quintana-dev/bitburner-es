@@ -43,13 +43,13 @@ export function RamButton(props: IProps): React.ReactElement {
       <span>
         <br />
         <Typography>
-          <i>"More RAM means more scripts on 'home'"</i>
+          <i>"Más RAM significa más scripts en 'home'"</i>
         </Typography>
         <br />
         <Button disabled={!Player.canAfford(cost) || reachMaxRam} onClick={buy}>
-          Upgrade 'home' RAM&nbsp;
+          Mejorar RAM de 'home'&nbsp;
           {reachMaxRam ? (
-            "- Max"
+            "- Máx"
           ) : (
             <>
               ({formatRam(homeComputer.maxRam)} -&gt; {formatRam(homeComputer.maxRam * 2)}) -&nbsp;

@@ -28,24 +28,24 @@ type FactionRootProps = {
 
 // Info text for all options on the UI
 const hackingContractsInfo =
-  "Complete hacking contracts for your faction. " +
-  "Your effectiveness, which determines how much " +
-  "reputation you gain for this faction, is based completely on your hacking skill. " +
-  "You will gain hacking exp.";
+  "Completa contratos de hackeo para tu facción. " +
+  "Tu efectividad, que determina cuánta " +
+  "reputation ganas para esta facción, se basa enteramente en tu habilidad de hackeo. " +
+  "Ganarás exp de hackeo.";
 const fieldWorkInfo =
-  "Carry out field missions for your faction. " +
-  "Your effectiveness, which determines how much " +
-  "reputation you gain for this faction, is based on all of your stats equally. " +
-  "You will gain exp for all stats.";
+  "Lleva a cabo misiones de campo para tu facción. " +
+  "Tu efectividad, que determina cuánta " +
+  "reputación ganas para esta facción, se basa equitativamente en todos tus atributos. " +
+  "Ganarás exp para todos tus atributos.";
 const securityWorkInfo =
-  "Serve in a security detail for your faction. " +
-  "Your effectiveness, which determines how much " +
-  "reputation you gain for this faction, is based on your combat stats and your hacking skill. " +
-  "You will gain exp for all combat stats and hacking.";
+  "Sirve en destacamentos de seguridad para tu facción. " +
+  "Tu efectividad, que determina cuánta " +
+  "reputación ganas para esta facción, se basa en tus estadísticas de combate y habilidad de hackeo. " +
+  "Ganarás exp en todas las estadísticas de combate y en hackeo.";
 const augmentationsInfo =
-  "As your reputation with this faction rises, you will " +
-  "unlock augmentations, which you can purchase to enhance " +
-  "your abilities.";
+  "A medida que aumente tu reputación con esta facción " +
+  "desbloquearás aumentos, que puedes comprar para potenciar " +
+  "tus habilidades.";
 
 interface IMainProps {
   faction: Faction;
@@ -105,7 +105,7 @@ function MainPage({ faction, rerender, onAugmentations }: IMainProps): React.Rea
 
   return (
     <>
-      <Button onClick={() => Router.toPage(Page.Factions)}>Back</Button>
+      <Button onClick={() => Router.toPage(Page.Factions)}>Volver</Button>
       <Typography variant="h4" color="primary">
         {faction.name}
       </Typography>
@@ -114,27 +114,26 @@ function MainPage({ faction, rerender, onAugmentations }: IMainProps): React.Rea
         <>
           {factionInfo.offersWork() && (
             <Typography>
-              Perform work/carry out assignments for your faction to help further its cause! By doing so, you will earn
-              reputation for your faction. You will also gain reputation passively over time, although at a very slow
-              rate.&nbsp;
-              {knowAboutBitverse() && <>Note that the passive reputation gain is disabled in some BitNodes. </>}
-              Earning reputation will allow you to purchase augmentations through this faction, which are powerful
-              upgrades that enhance your abilities.
+              ¡Realiza trabajos y misiones para tu facción para apoyar su causa! Al hacerlo, ganarás reputación
+              para tu facción. También ganarás reputación pasivamente a lo largo del tiempo, aunque a un ritmo muy lento.&nbsp;
+              {knowAboutBitverse() && <>Ten en cuenta que la ganancia pasiva de reputación está desactivada en algunos BitNodes. </>}
+              Ganar reputación te permitirá comprar aumentos cibernéticos a través de esta facción, que son poderosas
+              mejoras para potenciar tus capacidades.
             </Typography>
           )}
           {factionInfo.offerHackingWork && (
             <Option
-              buttonText={"Hacking Contracts"}
+              buttonText={"Contratos de Hackeo"}
               infoText={hackingContractsInfo}
               onClick={() => startHackingContracts(faction)}
             />
           )}
           {factionInfo.offerFieldWork && (
-            <Option buttonText={"Field Work"} infoText={fieldWorkInfo} onClick={() => startFieldWork(faction)} />
+            <Option buttonText={"Trabajo de Campo"} infoText={fieldWorkInfo} onClick={() => startFieldWork(faction)} />
           )}
           {factionInfo.offerSecurityWork && (
             <Option
-              buttonText={"Security Work"}
+              buttonText={"Trabajo de Seguridad"}
               infoText={securityWorkInfo}
               onClick={() => startSecurityWork(faction)}
             />
@@ -144,7 +143,7 @@ function MainPage({ faction, rerender, onAugmentations }: IMainProps): React.Rea
           )}
         </>
       )}
-      <Option buttonText={"Purchase Augmentations"} infoText={augmentationsInfo} onClick={onAugmentations} />
+      <Option buttonText={"Comprar Aumentos"} infoText={augmentationsInfo} onClick={onAugmentations} />
     </>
   );
 }
@@ -156,9 +155,9 @@ export function FactionRoot({ faction }: FactionRootProps): React.ReactElement {
     return (
       <>
         <Typography variant="h4" color="primary">
-          You have not joined {faction.name} yet!
+          ¡Aún no te has unido a {faction.name}!
         </Typography>
-        <Button onClick={() => Router.toPage(Page.Factions)}>Back to Factions</Button>
+        <Button onClick={() => Router.toPage(Page.Factions)}>Volver a Facciones</Button>
       </>
     );
   }

@@ -113,10 +113,10 @@ export function GenericLocation({ location, showBackButton }: IProps): React.Rea
 
   return (
     <>
-      {showBackButton && <Button onClick={() => Router.toPage(Page.City)}>Return to World</Button>}
+      {showBackButton && <Button onClick={() => Router.toPage(Page.City)}>Volver al Mundo</Button>}
       <Typography variant="h4" sx={{ mt: 1 }}>
         {backdoorInstalled && serverMeta ? (
-          <Tooltip title={`Backdoor installed on ${serverMeta.hostname}.`}>
+          <Tooltip title={`Backdoor instalado en ${serverMeta.hostname}.`}>
             <span>
               <CorruptibleText content={location.name} spoiler={false} />
             </span>

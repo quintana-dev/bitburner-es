@@ -56,60 +56,60 @@ function ExpRows(rate: WorkStats): React.ReactElement[] {
     rate.hackExp > 0 && (
       <StatsRow
         key="hack"
-        name="Hacking Exp"
+        name="EXP de Hackeo"
         color={Settings.theme.hack}
         data={{
-          content: `${formatExp(rate.hackExp * CYCLES_PER_SEC)} / sec`,
+          content: `${formatExp(rate.hackExp * CYCLES_PER_SEC)} / seg`,
         }}
       />
     ),
     rate.strExp > 0 && (
       <StatsRow
         key="str"
-        name="Strength Exp"
+        name="EXP de Fuerza"
         color={Settings.theme.combat}
         data={{
-          content: `${formatExp(rate.strExp * CYCLES_PER_SEC)} / sec`,
+          content: `${formatExp(rate.strExp * CYCLES_PER_SEC)} / seg`,
         }}
       />
     ),
     rate.defExp > 0 && (
       <StatsRow
         key="def"
-        name="Defense Exp"
+        name="EXP de Defensa"
         color={Settings.theme.combat}
         data={{
-          content: `${formatExp(rate.defExp * CYCLES_PER_SEC)} / sec`,
+          content: `${formatExp(rate.defExp * CYCLES_PER_SEC)} / seg`,
         }}
       />
     ),
     rate.dexExp > 0 && (
       <StatsRow
         key="dex"
-        name="Dexterity Exp"
+        name="EXP de Destreza"
         color={Settings.theme.combat}
         data={{
-          content: `${formatExp(rate.dexExp * CYCLES_PER_SEC)} / sec`,
+          content: `${formatExp(rate.dexExp * CYCLES_PER_SEC)} / seg`,
         }}
       />
     ),
     rate.agiExp > 0 && (
       <StatsRow
         key="agi"
-        name="Agility Exp"
+        name="EXP de Agilidad"
         color={Settings.theme.combat}
         data={{
-          content: `${formatExp(rate.agiExp * CYCLES_PER_SEC)} / sec`,
+          content: `${formatExp(rate.agiExp * CYCLES_PER_SEC)} / seg`,
         }}
       />
     ),
     rate.chaExp > 0 && (
       <StatsRow
         key="cha"
-        name="Charisma Exp"
+        name="EXP de Carisma"
         color={Settings.theme.cha}
         data={{
-          content: `${formatExp(rate.chaExp * CYCLES_PER_SEC)} / sec`,
+          content: `${formatExp(rate.chaExp * CYCLES_PER_SEC)} / seg`,
         }}
       />
     ),
@@ -122,7 +122,7 @@ function CrimeExpRows(rate: WorkStats): React.ReactElement[] {
     rate.hackExp > 0 && (
       <StatsRow
         key="hack"
-        name="Hacking Exp"
+        name="EXP de Hackeo"
         color={Settings.theme.hack}
         data={{
           content: `${formatExp(rate.hackExp)}`,
@@ -132,7 +132,7 @@ function CrimeExpRows(rate: WorkStats): React.ReactElement[] {
     rate.strExp > 0 && (
       <StatsRow
         key="str"
-        name="Strength Exp"
+        name="EXP de Fuerza"
         color={Settings.theme.combat}
         data={{
           content: `${formatExp(rate.strExp)}`,
@@ -142,7 +142,7 @@ function CrimeExpRows(rate: WorkStats): React.ReactElement[] {
     rate.defExp > 0 && (
       <StatsRow
         key="def"
-        name="Defense Exp"
+        name="EXP de Defensa"
         color={Settings.theme.combat}
         data={{
           content: `${formatExp(rate.defExp)}`,
@@ -152,7 +152,7 @@ function CrimeExpRows(rate: WorkStats): React.ReactElement[] {
     rate.dexExp > 0 && (
       <StatsRow
         key="dex"
-        name="Dexterity Exp"
+        name="EXP de Destreza"
         color={Settings.theme.combat}
         data={{
           content: `${formatExp(rate.dexExp)}`,
@@ -162,7 +162,7 @@ function CrimeExpRows(rate: WorkStats): React.ReactElement[] {
     rate.agiExp > 0 && (
       <StatsRow
         key="agi"
-        name="Agility Exp"
+        name="EXP de Agilidad"
         color={Settings.theme.combat}
         data={{
           content: `${formatExp(rate.agiExp)}`,
@@ -172,7 +172,7 @@ function CrimeExpRows(rate: WorkStats): React.ReactElement[] {
     rate.chaExp > 0 && (
       <StatsRow
         key="cha"
-        name="Charisma Exp"
+        name="EXP de Carisma"
         color={Settings.theme.cha}
         data={{
           content: `${formatExp(rate.chaExp)}`,
@@ -221,16 +221,16 @@ export function WorkInProgressRoot(): React.ReactElement {
           Router.toPage(Page.City);
         },
       },
-      title: `You are attempting ${crime.workName}`,
+      title: `Estás intentando: ${crime.workName}`,
 
       gains: [
         <tr key="header">
           <td>
-            <Typography>Success chance: {formatPercent(successChance)}</Typography>
-            <Typography>Gains (on success)</Typography>
+            <Typography>Probabilidad de éxito: {formatPercent(successChance)}</Typography>
+            <Typography>Ganancias (si tiene éxito)</Typography>
           </td>
         </tr>,
-        <StatsRow key="money" name="Money:" color={Settings.theme.money}>
+        <StatsRow key="money" name="Dinero:" color={Settings.theme.money}>
           <Typography>
             <Money money={gains.money} />
           </Typography>
@@ -242,7 +242,7 @@ export function WorkInProgressRoot(): React.ReactElement {
         percentage: completion,
       },
 
-      stopText: "Stop committing crime",
+      stopText: "Detener delito",
     };
   }
 
@@ -251,9 +251,9 @@ export function WorkInProgressRoot(): React.ReactElement {
 
     let stopText = "";
     if (classWork.isGym()) {
-      stopText = "Stop training at gym";
+      stopText = "Detener entrenamiento";
     } else {
-      stopText = "Stop taking course";
+      stopText = "Detener curso";
     }
 
     const rates = classWork.calculateRates();
@@ -269,12 +269,12 @@ export function WorkInProgressRoot(): React.ReactElement {
       },
       title: (
         <>
-          You are currently <b>{classWork.getClass().youAreCurrently}</b>
+          Actualmente estás <b>{classWork.getClass().youAreCurrently}</b>
         </>
       ),
 
       gains: [
-        <StatsRow key="totalCost" name="Total Cost" color={Settings.theme.money}>
+        <StatsRow key="totalCost" name="Costo Total" color={Settings.theme.money}>
           <Typography>
             <Money money={classWork.earnings.money} /> (<MoneyRate money={rates.money * CYCLES_PER_SEC} />)
           </Typography>
@@ -305,7 +305,7 @@ export function WorkInProgressRoot(): React.ReactElement {
       },
       title: (
         <>
-          You are currently working on coding <b>{create.programName}</b>
+          Actualmente estás programando <b>{create.programName}</b>
         </>
       ),
 
@@ -314,8 +314,8 @@ export function WorkInProgressRoot(): React.ReactElement {
         percentage: completion,
       },
 
-      stopText: "Stop creating program",
-      stopTooltip: "Your work will be saved and you can return to complete the program later.",
+      stopText: "Detener creación de programa",
+      stopTooltip: "Tu progreso se guardará y podrás continuar más tarde.",
     };
   }
 
@@ -335,7 +335,7 @@ export function WorkInProgressRoot(): React.ReactElement {
       },
       title: (
         <>
-          You are currently working on grafting <b>{graftWork.augmentation}</b>
+          Actualmente estás injertando <b>{graftWork.augmentation}</b>
         </>
       ),
 
@@ -344,10 +344,10 @@ export function WorkInProgressRoot(): React.ReactElement {
         percentage: (graftWork.unitCompleted / graftWork.unitNeeded()) * 100,
       },
 
-      stopText: "Stop grafting",
+      stopText: "Detener injerto",
       stopTooltip: (
         <>
-          If you cancel, your work will <b>not</b> be saved, and the money you spent will <b>not</b> be returned
+          Si cancelas, tu progreso <b>no</b> se guardará y el dinero gastado <b>no</b> será devuelto.
         </>
       ),
     };
@@ -361,17 +361,17 @@ export function WorkInProgressRoot(): React.ReactElement {
           cancel: () => Router.toPage(Page.Factions),
         },
         title:
-          `You have not joined ${Player.currentWork.factionName || "(Faction not found)"} at this time,` +
-          " please try again if you think this should have worked",
+          `No te has unido a ${Player.currentWork.factionName || "(Facción no encontrada)"} en este momento,` +
+          " por favor intenta nuevamente si crees que esto debería haber funcionado",
 
-        stopText: "Back to Factions",
+        stopText: "Volver a Facciones",
       };
     }
 
     const description = {
-      [FactionWorkType.hacking]: "carrying out hacking contracts",
-      [FactionWorkType.field]: "carrying out field missions",
-      [FactionWorkType.security]: "performing security detail",
+      [FactionWorkType.hacking]: "realizando contratos de hackeo",
+      [FactionWorkType.field]: "realizando misiones de campo",
+      [FactionWorkType.security]: "realizando trabajo de seguridad",
     };
 
     const exp = Player.currentWork.getExpRates();
@@ -388,13 +388,13 @@ export function WorkInProgressRoot(): React.ReactElement {
       },
       title: (
         <>
-          You are currently {description[Player.currentWork.factionWorkType]} for <b>{faction.name}</b>
+          Actualmente estás {description[Player.currentWork.factionWorkType]} para <b>{faction.name}</b>
         </>
       ),
 
       description: (
         <>
-          Current Faction Reputation: <Reputation reputation={faction.playerReputation} /> (
+          Reputación de Facción actual: <Reputation reputation={faction.playerReputation} /> (
           <ReputationRate reputation={Player.currentWork.getReputationRate() * CYCLES_PER_SEC} />)
         </>
       ),
@@ -403,7 +403,7 @@ export function WorkInProgressRoot(): React.ReactElement {
         elapsed: Player.currentWork.cyclesWorked * CONSTANTS.MilliPerCycle,
       },
 
-      stopText: "Stop Faction work",
+      stopText: "Detener trabajo de Facción",
     };
   }
 
@@ -415,10 +415,10 @@ export function WorkInProgressRoot(): React.ReactElement {
           cancel: () => Router.toPage(Page.Terminal),
         },
         title:
-          `You cannot work for ${Player.currentWork.companyName} at this time,` +
-          " please try again if you think this should have worked",
+          `No puedes trabajar para ${Player.currentWork.companyName} en este momento,` +
+          " por favor intenta nuevamente",
 
-        stopText: "Back to Terminal",
+        stopText: "Volver a Terminal",
       };
     }
 
@@ -439,22 +439,22 @@ export function WorkInProgressRoot(): React.ReactElement {
       },
       title: (
         <>
-          You are currently working as a <b>{position}</b> at <b>{Player.currentWork.companyName}</b>
+          Actualmente estás trabajando como <b>{position}</b> en <b>{Player.currentWork.companyName}</b>
         </>
       ),
 
       description: (
         <>
-          Current Company Reputation: <Reputation reputation={companyRep} />
+          Reputación de Empresa actual: <Reputation reputation={companyRep} />
         </>
       ),
       gains: [
-        <StatsRow key="money" name="Money" color={Settings.theme.money}>
+        <StatsRow key="money" name="Dinero" color={Settings.theme.money}>
           <Typography>
             <MoneyRate money={gains.money * CYCLES_PER_SEC} />
           </Typography>
         </StatsRow>,
-        <StatsRow key="reputation" name="Company Reputation" color={Settings.theme.rep}>
+        <StatsRow key="reputation" name="Reputación de Empresa" color={Settings.theme.rep}>
           <Typography>
             <ReputationRate reputation={gains.reputation * CYCLES_PER_SEC} />
           </Typography>
@@ -465,7 +465,7 @@ export function WorkInProgressRoot(): React.ReactElement {
         elapsed: Player.currentWork.cyclesWorked * CONSTANTS.MilliPerCycle,
       },
 
-      stopText: "Stop working",
+      stopText: "Dejar de trabajar",
     };
   }
 
@@ -507,13 +507,13 @@ export function WorkInProgressRoot(): React.ReactElement {
               }}
             >
               {workInfo.progress.elapsed !== undefined && (
-                <Typography>{convertTimeMsToTimeElapsedString(workInfo.progress.elapsed)} elapsed</Typography>
+                <Typography>{convertTimeMsToTimeElapsedString(workInfo.progress.elapsed)} transcurrido</Typography>
               )}
               {workInfo.progress.remaining !== undefined && (
-                <Typography>{convertTimeMsToTimeElapsedString(workInfo.progress.remaining)} remaining</Typography>
+                <Typography>{convertTimeMsToTimeElapsedString(workInfo.progress.remaining)} restante</Typography>
               )}
               {workInfo.progress.percentage !== undefined && (
-                <Typography>{workInfo.progress.percentage.toFixed(2)}% done</Typography>
+                <Typography>{workInfo.progress.percentage.toFixed(2)}% completado</Typography>
               )}
             </Box>
             {workInfo.progress.percentage !== undefined && (
@@ -531,7 +531,7 @@ export function WorkInProgressRoot(): React.ReactElement {
             <Button onClick={workInfo.buttons.cancel}>{workInfo.stopText}</Button>
           )}
           {workInfo.buttons.unfocus && (
-            <Button onClick={workInfo.buttons.unfocus}>Do something else simultaneously</Button>
+            <Button onClick={workInfo.buttons.unfocus}>Hacer otra cosa simultáneamente</Button>
           )}
         </Box>
       </Paper>

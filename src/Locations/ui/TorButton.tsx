@@ -12,20 +12,20 @@ import { getTorRouter } from "../../Server/ServerHelpers";
 /** Attempt to purchase a TOR router using the button. */
 export function purchaseTorRouter(): void {
   if (Player.hasTorRouter()) {
-    dialogBoxCreate(`You already have a TOR Router!`);
+    dialogBoxCreate(`¡Ya tienes un Router TOR!`);
     return;
   }
   if (!Player.canAfford(CONSTANTS.TorRouterCost)) {
-    dialogBoxCreate("You cannot afford to purchase the TOR router!");
+    dialogBoxCreate("¡No tienes suficiente dinero para comprar el router TOR!");
     return;
   }
   Player.loseMoney(CONSTANTS.TorRouterCost, "other");
 
   getTorRouter();
   dialogBoxCreate(
-    "You have purchased a TOR router!\n" +
-      "You now have access to the dark web from your home computer.\n" +
-      `Use the "buy" command in the terminal to purchase programs.`,
+    "¡Has comprado un router TOR!\n" +
+      "Ahora tienes acceso a la dark web desde tu computadora 'home'.\n" +
+      `Usa el comando "buy" en la terminal para comprar programas.`,
   );
 }
 
@@ -43,8 +43,8 @@ export function TorButton(props: IProps): React.ReactElement {
 
   return (
     <Button disabled={!Player.canAfford(CONSTANTS.TorRouterCost) || hasTorRouter} onClick={buy}>
-      Purchase TOR router -&nbsp;
-      {hasTorRouter ? "Purchased" : <Money money={CONSTANTS.TorRouterCost} forPurchase={true} />}
+      Comprar router TOR -&nbsp;
+      {hasTorRouter ? "Comprado" : <Money money={CONSTANTS.TorRouterCost} forPurchase={true} />}
     </Button>
   );
 }

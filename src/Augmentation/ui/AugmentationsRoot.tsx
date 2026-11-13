@@ -107,34 +107,34 @@ export function AugmentationsRoot(props: IProps): React.ReactElement {
 
   return (
     <Container disableGutters maxWidth="lg" sx={{ mx: 0 }}>
-      <Typography variant="h4">Augmentations</Typography>
+      <Typography variant="h4">Aumentos</Typography>
       <Box sx={{ mb: 1 }}>
         <Paper sx={{ p: 1 }}>
           <Typography variant="h5" color="primary" sx={{ display: "flex", alignItems: "center", flexWrap: "wrap" }}>
-            Purchased Augmentations
+            Aumentos Comprados
             <Tooltip
               title={
                 <>
                   <Typography>
-                    Below is a list of all Augmentations you have purchased but not yet installed. Click the button
-                    below to install them.
+                    A continuación se muestra una lista de todos los Aumentos que has comprado pero aún no has instalado.
+                    Haz clic en el botón inferior para instalarlos.
                   </Typography>
                   <Typography>
-                    WARNING: Installing your Augmentations resets most of your progress, including:
+                    ADVERTENCIA: Instalar tus Aumentos reinicia la mayor parte de tu progreso, incluyendo:
                   </Typography>
                   <br />
-                  <Typography>- Stats/Skill levels and Experience</Typography>
-                  <Typography>- Money</Typography>
-                  <Typography>- Scripts on every computer but your home computer</Typography>
-                  <Typography>- Cloud servers</Typography>
+                  <Typography>- Niveles de atributos, habilidades y Experiencia</Typography>
+                  <Typography>- Dinero</Typography>
+                  <Typography>- Scripts en todos los equipos excepto en tu servidor home</Typography>
+                  <Typography>- Servidores en la nube</Typography>
                   <Typography>- Hacknet</Typography>
-                  <Typography>- Faction/Company reputation</Typography>
-                  <Typography>- Stocks</Typography>
+                  <Typography>- Reputación de Facción y Empresa</Typography>
+                  <Typography>- Acciones en la bolsa</Typography>
                   <br />
                   <Typography>
-                    Installing Augmentations lets you start over with the perks and benefits granted by all of the
-                    Augmentations you have ever installed. Also, you will keep any scripts and RAM/Core upgrades on your
-                    home computer (but you will lose all programs besides NUKE.exe)
+                    Instalar Aumentos te permite renacer con las ventajas y multiplicadores otorgados por todos los Aumentos
+                    que hayas instalado alguna vez. Además, conservarás tus scripts y mejoras de RAM/Núcleos de home
+                    (pero perderás los programas adicionales además de NUKE.exe).
                   </Typography>
                 </>
               }
@@ -148,36 +148,36 @@ export function AugmentationsRoot(props: IProps): React.ReactElement {
             onConfirm={props.installAugmentationsFn}
             confirmationText={
               <>
-                Installing will reset
+                La instalación reiniciará:
                 <br />
-                <br />- money
-                <br />- skill / experience
-                <br />- every server except home
-                <br />- factions and reputation
-                <br />- current work activity
-                <br />
-                <br />
-                You will keep:
-                <br />
-                <br />- All scripts on home
-                <br />- home ram and cores
+                <br />- dinero
+                <br />- habilidades / experiencia
+                <br />- todos los servidores excepto home
+                <br />- facciones y reputación
+                <br />- actividad de trabajo actual
                 <br />
                 <br />
-                It is recommended to install several Augmentations at once.
+                Conservarás:
+                <br />
+                <br />- Todos los scripts en home
+                <br />- Memoria RAM y núcleos de home
+                <br />
+                <br />
+                Se recomienda instalar varios Aumentos a la vez.
               </>
             }
           />
           <Box sx={{ display: "grid", width: "100%", gridTemplateColumns: "1fr 1fr" }}>
-            <Tooltip title={<Typography>'I never asked for this'</Typography>}>
+            <Tooltip title={<Typography>'Nunca pedí esto'</Typography>}>
               <span>
                 <Button sx={{ width: "100%" }} disabled={Player.queuedAugmentations.length === 0} onClick={doInstall}>
-                  Install Augmentations
+                  Instalar Aumentos
                 </Button>
               </span>
             </Tooltip>
-            <Tooltip title={<Typography>It's always a good idea to backup/export your save!</Typography>}>
+            <Tooltip title={<Typography>¡Siempre es recomendable respaldar / exportar tu partida!</Typography>}>
               <Button sx={{ width: "100%", color: Settings.theme.successlight }} onClick={doExport}>
-                Backup Save {exportBonusStr()}
+                Respaldar Partida {exportBonusStr()}
               </Button>
             </Tooltip>
           </Box>
@@ -189,7 +189,7 @@ export function AugmentationsRoot(props: IProps): React.ReactElement {
           </Box>
         ) : (
           <Paper sx={{ p: 1 }}>
-            <Typography>No Augmentations have been purchased yet</Typography>
+            <Typography>Aún no se ha comprado ningún Aumento</Typography>
           </Paper>
         )}
       </Box>

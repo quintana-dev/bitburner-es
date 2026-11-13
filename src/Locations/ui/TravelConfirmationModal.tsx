@@ -21,15 +21,15 @@ export function TravelConfirmationModal(props: IProps): React.ReactElement {
   return (
     <Modal open={props.open} onClose={props.onClose}>
       <Typography>
-        Would you like to travel to {props.city}? The trip will cost{" "}
+        ¿Deseas viajar a {props.city}? El viaje costará{" "}
         <Money money={CONSTANTS.TravelCost} forPurchase={true} />.
       </Typography>
       <br />
       <br />
       <Button onClick={travel}>
-        <Typography>Travel</Typography>
+        <Typography>Viajar</Typography>
       </Button>
-      <Button onClick={() => props.onClose()}>Cancel</Button>
+      <Button onClick={() => props.onClose()}>Cancelar</Button>
     </Modal>
   );
 }

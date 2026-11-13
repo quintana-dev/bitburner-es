@@ -22,52 +22,52 @@ export interface Class {
 export const Classes: Record<ClassType, Class> = {
   [UniversityClassType.computerScience]: {
     type: UniversityClassType.computerScience,
-    youAreCurrently: `studying Computer Science`,
+    youAreCurrently: `estudiando Ciencias de la Computación`,
     earnings: newWorkStats({ hackExp: 0.5, intExp: 0.01 }),
   },
   [UniversityClassType.dataStructures]: {
     type: UniversityClassType.dataStructures,
-    youAreCurrently: "taking a Data Structures course",
+    youAreCurrently: "tomando un curso de Estructuras de Datos",
     earnings: newWorkStats({ money: -40, hackExp: 1, intExp: 0.01 }),
   },
   [UniversityClassType.networks]: {
     type: UniversityClassType.networks,
-    youAreCurrently: "taking a Networks course",
+    youAreCurrently: "tomando un curso de Redes",
     earnings: newWorkStats({ money: -80, hackExp: 2, intExp: 0.01 }),
   },
   [UniversityClassType.algorithms]: {
     type: UniversityClassType.algorithms,
-    youAreCurrently: "taking an Algorithms course",
+    youAreCurrently: "tomando un curso de Algoritmos",
     earnings: newWorkStats({ money: -320, hackExp: 4, intExp: 0.01 }),
   },
   [UniversityClassType.management]: {
     type: UniversityClassType.management,
-    youAreCurrently: "taking a Management course",
+    youAreCurrently: "tomando un curso de Gestión",
     earnings: newWorkStats({ money: -160, chaExp: 2, intExp: 0.01 }),
   },
   [UniversityClassType.leadership]: {
     type: UniversityClassType.leadership,
-    youAreCurrently: "taking a Leadership course",
+    youAreCurrently: "tomando un curso de Liderazgo",
     earnings: newWorkStats({ money: -320, chaExp: 4, intExp: 0.01 }),
   },
   [GymType.strength]: {
     type: GymType.strength,
-    youAreCurrently: "training your strength at a gym",
+    youAreCurrently: "entrenando tu fuerza en el gimnasio",
     earnings: newWorkStats({ money: -120, strExp: 1 }),
   },
   [GymType.defense]: {
     type: GymType.defense,
-    youAreCurrently: "training your defense at a gym",
+    youAreCurrently: "entrenando tu defensa en el gimnasio",
     earnings: newWorkStats({ money: -120, defExp: 1 }),
   },
   [GymType.dexterity]: {
     type: GymType.dexterity,
-    youAreCurrently: "training your dexterity at a gym",
+    youAreCurrently: "entrenando tu destreza en el gimnasio",
     earnings: newWorkStats({ money: -120, dexExp: 1 }),
   },
   [GymType.agility]: {
     type: GymType.agility,
-    youAreCurrently: "training your agility at a gym",
+    youAreCurrently: "entrenando tu agilidad en el gimnasio",
     earnings: newWorkStats({ money: -120, agiExp: 1 }),
   },
 };
@@ -114,17 +114,17 @@ export class ClassWork extends PlayerBaseWork {
     if (!this.singularity && !suppressDialog) {
       dialogBoxCreate(
         <>
-          After {this.getClass().youAreCurrently} for{" "}
+          Después de {this.getClass().youAreCurrently} durante{" "}
           {convertTimeMsToTimeElapsedString(this.cyclesWorked * CONSTANTS.MilliPerCycle)}, <br />
-          you spent a total of <Money money={-this.earnings.money} />. <br />
+          gastaste un total de <Money money={-this.earnings.money} />. <br />
           <br />
-          You earned a total of: <br />
-          {formatExp(this.earnings.hackExp)} hacking exp <br />
-          {formatExp(this.earnings.strExp)} strength exp <br />
-          {formatExp(this.earnings.defExp)} defense exp <br />
-          {formatExp(this.earnings.dexExp)} dexterity exp <br />
-          {formatExp(this.earnings.agiExp)} agility exp <br />
-          {formatExp(this.earnings.chaExp)} charisma exp
+          Ganaste un total de: <br />
+          {formatExp(this.earnings.hackExp)} EXP de hackeo <br />
+          {formatExp(this.earnings.strExp)} EXP de fuerza <br />
+          {formatExp(this.earnings.defExp)} EXP de defensa <br />
+          {formatExp(this.earnings.dexExp)} EXP de destreza <br />
+          {formatExp(this.earnings.agiExp)} EXP de agilidad <br />
+          {formatExp(this.earnings.chaExp)} EXP de carisma
           <br />
         </>,
       );
