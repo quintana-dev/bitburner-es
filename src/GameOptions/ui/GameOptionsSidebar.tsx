@@ -43,13 +43,23 @@ interface ITabProps {
   tabName: OptionsTabName;
 }
 
+const tabNamesSpanish: Record<string, string> = {
+  System: "Sistema",
+  Interface: "Interfaz",
+  "Numeric Display": "Visualización Numérica",
+  Gameplay: "Jugabilidad",
+  Misc: "Varios",
+  "Remote API": "API Remota",
+  "Key Binding": "Atajos de Teclado",
+};
+
 const SideBarTab = (props: ITabProps): React.ReactElement => {
   return (
     <ListItemButton
       selected={props.sideBarProps.tab === props.tabName}
       onClick={() => props.sideBarProps.setTab(props.tabName)}
     >
-      <Typography>{props.tabName}</Typography>
+      <Typography>{tabNamesSpanish[props.tabName] || props.tabName}</Typography>
     </ListItemButton>
   );
 };
@@ -145,27 +155,27 @@ export const GameOptionsSidebar = (props: IProps): React.ReactElement => {
         }}
       >
         <Button onClick={() => props.save()} startIcon={<Save />} sx={{ gridArea: "save" }}>
-          Save Game
+          Guardar Partida
         </Button>
         <Box sx={{ gridArea: "delete", "& .MuiButton-root": { height: "100%", width: "100%" } }}>
           <DeleteGameButton />
         </Box>
-        <Tooltip title={<Typography>Export your game to a text file.</Typography>}>
+        <Tooltip title={<Typography>Exporta tu partida a un archivo de texto.</Typography>}>
           <Button onClick={() => props.export()} startIcon={<Download />} sx={{ gridArea: "export" }}>
-            Export Game
+            Exportar Partida
           </Button>
         </Tooltip>
         <Tooltip
           title={
             <Typography>
-              Import your game from a text file.
+              Importa tu partida desde un archivo de texto.
               <br />
-              This will <strong>overwrite</strong> your current game. Back it up first!
+              ¡Esto <strong>sobrescribirá</strong> tu partida actual! Haz una copia de seguridad primero.
             </Typography>
           }
         >
           <Button onClick={startImport} startIcon={<Upload />} sx={{ gridArea: "import" }}>
-            Import Game
+            Importar Partida
             <input
               ref={importInput}
               id="import-game-file-selector"
@@ -241,7 +251,7 @@ export const GameOptionsSidebar = (props: IProps): React.ReactElement => {
           }
         >
           <Button onClick={() => props.forceKill()} sx={{ gridArea: "kill" }}>
-            Force kill all active scripts
+            Forzar detención de scripts activos
           </Button>
         </Tooltip>
         <Box sx={{ gridArea: "reset", "& .MuiButton-root": { height: "100%", width: "100%" } }}>
@@ -256,12 +266,12 @@ export const GameOptionsSidebar = (props: IProps): React.ReactElement => {
           }
         >
           <Button onClick={() => setDiagnosticOpen(true)} sx={{ gridArea: "diagnose" }}>
-            Diagnose files
+            Diagnosticar archivos
           </Button>
         </Tooltip>
-        <Tooltip title="Head to the theme browser to see a collection of prebuilt themes.">
+        <Tooltip title="Visita el explorador de temas para ver temas prediseñados.">
           <Button startIcon={<Palette />} onClick={() => Router.toPage(Page.ThemeBrowser)} sx={{ gridArea: "browse" }}>
-            Theme Browser
+            Explorador de Temas
           </Button>
         </Tooltip>
         <Box sx={{ gridArea: "theme", "& .MuiButton-root": { height: "100%", width: "100%" } }}>
@@ -283,22 +293,22 @@ export const GameOptionsSidebar = (props: IProps): React.ReactElement => {
             my: 1,
           }}
         >
-          <Tooltip title={<Typography>Start a GitHub issue to help the devs find bugs!</Typography>}>
+          <Tooltip title={<Typography>¡Abre un reporte en GitHub para ayudar a resolver errores!</Typography>}>
             <Button
               startIcon={<BugReport />}
               href="https://github.com/bitburner-official/bitburner-src/issues/new"
               target="_blank"
               sx={{ gridArea: "bug" }}
             >
-              Report Bug
+              Reportar Error
             </Button>
           </Tooltip>
           <Button startIcon={<Fingerprint />} onClick={() => setCreditsOpen(true)} sx={{ gridArea: "credits" }}>
-            Credits
+            Créditos
           </Button>
           <CreditsModal open={creditsOpen} onClose={() => setCreditsOpen(false)} />
           <Button startIcon={<LibraryBooks />} onClick={() => setConfirmResetOpen(true)} sx={{ gridArea: "tut" }}>
-            Reset tutorial
+            Reiniciar tutorial
           </Button>
           <Button startIcon={<Chat />} href="https://discord.gg/TFc3hKD" target="_blank" sx={{ gridArea: "discord" }}>
             Discord
@@ -312,6 +322,30 @@ export const GameOptionsSidebar = (props: IProps): React.ReactElement => {
             Reddit
           </Button>
         </Box>
+        <Box sx={{ mt: 2, mb: 1, textAlign: "center" }}>
+          <Typography variant="caption" sx={{ color: "#6e7681", display: "block", mb: 0.5, letterSpacing: "0.5px" }}>
+            TRADUCCIÓN AL ESPAÑOL POR
+          </Typography>
+          <a href="https://quintana.dev.ar" rel="noopener" target="_blank" style={{ textDecoration: "none" }}>
+            <div
+              style={{
+                fontSize: "22px",
+                fontWeight: 800,
+                color: "#e6edf3",
+                letterSpacing: "-0.5px",
+                padding: "6px 16px",
+                borderRadius: "6px",
+                display: "inline-block",
+                border: "1px solid rgba(184, 69, 255, 0.4)",
+                backgroundColor: "rgba(184, 69, 255, 0.08)",
+                boxShadow: "0 0 15px rgba(184, 69, 255, 0.15)",
+                fontFamily: "inherit",
+              }}
+            >
+              quintana<span style={{ color: "#b845ff", textShadow: "0 0 10px rgba(184, 69, 255, 0.7)" }}>.dev</span>
+            </div>
+          </a>
+        </Box>
       </Box>
       <Typography>Save ID: {Player.identifier}</Typography>
       <FileDiagnosticModal open={diagnosticOpen} onClose={() => setDiagnosticOpen(false)} />
@@ -320,8 +354,8 @@ export const GameOptionsSidebar = (props: IProps): React.ReactElement => {
         open={confirmResetOpen}
         onClose={() => setConfirmResetOpen(false)}
         onConfirm={props.reactivateTutorial}
-        confirmationText={"Restart the tutorial? Running scripts will be killed."}
-        additionalButton={<Button onClick={() => setConfirmResetOpen(false)}>Cancel</Button>}
+        confirmationText={"¿Reiniciar el tutorial? Se detendrán los scripts en ejecución."}
+        additionalButton={<Button onClick={() => setConfirmResetOpen(false)}>Cancelar</Button>}
       />
     </Box>
   );

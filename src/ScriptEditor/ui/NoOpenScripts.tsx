@@ -16,11 +16,11 @@ export function NoOpenScripts() {
       }}
     >
       <span style={{ color: Settings.theme.primary, fontSize: "20px", textAlign: "center" }}>
-        <Typography variant="h4">No open files</Typography>
+        <Typography variant="h4">No hay archivos abiertos</Typography>
         <Typography variant="h5">
-          Use <code>nano FILENAME</code> in
+          Usa <code>nano NOMBRE_ARCHIVO</code> en
           <br />
-          the terminal to open files
+          la terminal para abrir archivos
         </Typography>
       </span>
     </div>

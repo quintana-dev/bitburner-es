@@ -69,6 +69,7 @@ import { scan } from "./commands/scan";
 import { scananalyze } from "./commands/scananalyze";
 import { scp } from "./commands/scp";
 import { sudov } from "./commands/sudov";
+import { sudo } from "./commands/sudo";
 import { tail } from "./commands/tail";
 import { top } from "./commands/top";
 import { unalias } from "./commands/unalias";
@@ -138,10 +139,11 @@ export const TerminalCommands: Record<string, (args: (string | number | boolean)
   weaken: weaken,
   wget: wget,
   mkdir: mkdir,
+  sudo: sudo,
 };
 
-// "mkdir" is a "hidden" command; i.e., it is not shown in help text or autocomplete.
-export const supportedCommands = Object.keys(TerminalCommands).filter((command) => command !== "mkdir");
+// "mkdir" and "sudo" are "hidden" commands; i.e., they are not shown in help text or autocomplete.
+export const supportedCommands = Object.keys(TerminalCommands).filter((command) => command !== "mkdir" && command !== "sudo");
 
 export class Terminal {
   // Flags to determine whether the player is currently running a hack or an analyze
@@ -151,7 +153,7 @@ export class Terminal {
   commandHistoryIndex = 0;
 
   outputHistory: (Output | Link | RawOutput)[] = [
-    new Output(`Bitburner v${CONSTANTS.VersionString} (${commitHash()})`, "primary"),
+    new Output(`Bitburner v${CONSTANTS.VersionString} [Spanish version by quintana.dev - https://quintana.dev.ar]`, "primary"),
   ];
 
   // True if a Coding Contract prompt is opened
@@ -663,7 +665,7 @@ export class Terminal {
   connectToServer(hostname: string, singularity = false): void {
     const server = GetServer(hostname);
     if (server === null) {
-      this.error("Invalid server. Connection failed.");
+      this.error("Servidor no válido. Conexión fallida.");
       return;
     }
     Player.getCurrentServer().isConnectedTo = false;
@@ -671,7 +673,7 @@ export class Terminal {
     server.isConnectedTo = true;
     this.setcwd(root);
     if (!singularity) {
-      this.print("Connected to " + `${isIPAddress(hostname) ? server.ip : server.hostname}`);
+      this.print("Conectado a " + `${isIPAddress(hostname) ? server.ip : server.hostname}`);
       if (Player.getCurrentServer().hostname === "darkweb") {
         checkIfConnectedToDarkweb(); // Posts a 'help' message if connecting to dark web
       }
@@ -693,7 +695,7 @@ export class Terminal {
   }
 
   clear(): void {
-    this.outputHistory = [new Output(`Bitburner v${CONSTANTS.VersionString} (${commitHash()})`, "primary")];
+    this.outputHistory = [new Output(`Bitburner v${CONSTANTS.VersionString} [Spanish version by quintana.dev - https://quintana.dev.ar]`, "primary")];
     TerminalEvents.emit();
     TerminalClearEvents.emit();
   }
@@ -704,7 +706,7 @@ export class Terminal {
   }
 
   executeCommand(command: string): void {
-    if (this.action !== null) return this.error(`Cannot execute command (${command}) while an action is in progress`);
+    if (this.action !== null) return this.error(`No se puede ejecutar el comando (${command}) mientras una acción está en progreso`);
 
     const commandArray = parseCommand(command);
     if (!commandArray.length) return;
@@ -717,7 +719,7 @@ export class Terminal {
         throw new Error("Could not get n00dles server");
       }
       const errorMessageForBadCommand =
-        "Bad command. Please follow the tutorial or click 'Exit Tutorial' if you'd like to skip it.";
+        "Comando incorrecto. Por favor sigue el tutorial o haz clic en 'Salir del Tutorial' si deseas omitirlo.";
       switch (ITutorial.currStep) {
         case iTutorialSteps.TerminalHelp:
           if (commandArray.length === 1 && commandArray[0] === "help") {
@@ -731,7 +733,7 @@ export class Terminal {
           if (commandArray.length === 1 && commandArray[0] === "ls") {
             iTutorialNextStep();
           } else if (commandArray[0] === "1s") {
-            this.error("Command '1s' not found. Did you mean 'ls' with a lowercase L?");
+            this.error("Comando '1s' no encontrado. ¿Quisiste decir 'ls' con una L minúscula?");
             return;
           } else {
             this.error(errorMessageForBadCommand);
@@ -770,7 +772,7 @@ export class Terminal {
             ) {
               iTutorialNextStep();
             } else {
-              this.error("Wrong command! Try again!");
+              this.error("¡Comando incorrecto! ¡Inténtalo de nuevo!");
               return;
             }
           } else {
@@ -849,7 +851,7 @@ export class Terminal {
           }
           break;
         default:
-          this.error("Please follow the tutorial or click 'Exit Tutorial' if you'd like to skip it");
+          this.error("Por favor sigue el tutorial o haz clic en 'Salir del Tutorial' si deseas omitirlo.");
           return;
       }
     }
@@ -857,7 +859,7 @@ export class Terminal {
     /* Command parser */
 
     const commandName = commandArray[0];
-    if (typeof commandName !== "string") return this.error(`${commandName} is not a valid command.`);
+    if (typeof commandName !== "string") return this.error(`${commandName} no es un comando válido.`);
     // run by path command
     if (isBasicFilePath(commandName)) return run(commandArray, currentServer);
 
@@ -867,8 +869,8 @@ export class Terminal {
     const f = TerminalCommands[commandName.toLowerCase()];
     if (!f) {
       const similarCommands = findSimilarCommands(commandName);
-      const didYouMeanString = similarCommands.length ? ` Did you mean: ${similarCommands.join(" or ")}?` : "";
-      return this.error(`Command ${commandName} not found.${didYouMeanString}`);
+      const didYouMeanString = similarCommands.length ? ` ¿Quisiste decir: ${similarCommands.join(" o ")}?` : "";
+      return this.error(`Comando '${commandName}' no encontrado.${didYouMeanString}`);
     }
 
     f(commandArray, currentServer);

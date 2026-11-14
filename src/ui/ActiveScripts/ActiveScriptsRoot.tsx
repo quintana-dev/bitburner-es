@@ -42,9 +42,9 @@ export function ActiveScriptsRoot({ page }: ComponentProps): React.ReactElement 
 
   function errorTabText(): string {
     if (!ErrorState.UnreadErrors || tab === SimplePage.RecentErrors) {
-      return "Recent Errors";
+      return "Errores Recientes";
     }
-    return `Recent Errors (${ErrorState.UnreadErrors})`;
+    return `Errores Recientes (${ErrorState.UnreadErrors})`;
   }
 
   return (
@@ -63,8 +63,8 @@ export function ActiveScriptsRoot({ page }: ComponentProps): React.ReactElement 
             },
           }}
         >
-          <Tab label={"Active"} value={SimplePage.ActiveScripts} />
-          <Tab label={"Recently Killed"} value={SimplePage.RecentlyKilledScripts} />
+          <Tab label={"Activos"} value={SimplePage.ActiveScripts} />
+          <Tab label={"Finalizados Recientemente"} value={SimplePage.RecentlyKilledScripts} />
           <Tab label={errorTabText()} value={SimplePage.RecentErrors} />
         </Tabs>
         {Settings.SuppressErrorModals ? (
@@ -73,18 +73,18 @@ export function ActiveScriptsRoot({ page }: ComponentProps): React.ReactElement 
           <OptionSwitch
             checked={errorModalsAreSuppressed()}
             onChange={(newValue) => toggleSuppressErrorModals(newValue)}
-            text="Suppress error modals (5 min)"
+            text="Silenciar modales de error (5 min)"
             tooltip={
               <>
-                If this is set, no error modals will be shown for the next five minutes, and only log errors to the
-                Recent Errors page.
+                Si está activado, no se mostrarán ventanas de error durante los próximos cinco minutos, registrándolos
+                solo en la página de Errores Recientes.
               </>
             }
             wrapperStyles={{ marginLeft: "20px" }}
           />
         )}
         <Button color="error" onClick={killAllScripts} sx={{ margin: 0 }}>
-          Kill All Scripts
+          Detener Todos los Scripts
         </Button>
       </div>
 

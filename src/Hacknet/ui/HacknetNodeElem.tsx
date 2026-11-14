@@ -46,7 +46,7 @@ export function HacknetNodeElem(props: IProps): React.ReactElement {
   // Upgrade Level Button
   let upgradeLevelButton;
   if (node.level >= HacknetNodeConstants.MaxLevel) {
-    upgradeLevelButton = <Button disabled>MAX LEVEL</Button>;
+    upgradeLevelButton = <Button disabled>NIVEL MÁXIMO</Button>;
   } else {
     let multiplier = 0;
     if (purchaseMult === "MAX") {
@@ -84,7 +84,7 @@ export function HacknetNodeElem(props: IProps): React.ReactElement {
 
   let upgradeRAMButton;
   if (node.ram >= HacknetNodeConstants.MaxRam) {
-    upgradeRAMButton = <Button disabled>MAX RAM</Button>;
+    upgradeRAMButton = <Button disabled>RAM MÁXIMA</Button>;
   } else {
     let multiplier = 0;
     if (purchaseMult === "MAX") {
@@ -132,7 +132,7 @@ export function HacknetNodeElem(props: IProps): React.ReactElement {
   }
   let upgradeCoresButton;
   if (node.cores >= HacknetNodeConstants.MaxCores) {
-    upgradeCoresButton = <Button disabled>MAX CORES</Button>;
+    upgradeCoresButton = <Button disabled>NÚCLEOS MÁXIMOS</Button>;
   } else {
     let multiplier = 0;
     if (purchaseMult === "MAX") {
@@ -173,7 +173,7 @@ export function HacknetNodeElem(props: IProps): React.ReactElement {
           </TableRow>
           <TableRow>
             <TableCell>
-              <Typography>Production:</Typography>
+              <Typography>Producción:</Typography>
             </TableCell>
             <TableCell colSpan={2}>
               <Typography>
@@ -184,7 +184,7 @@ export function HacknetNodeElem(props: IProps): React.ReactElement {
           </TableRow>
           <TableRow>
             <TableCell>
-              <Typography>Level:</Typography>
+              <Typography>Nivel:</Typography>
             </TableCell>
             <TableCell>
               <Typography>{node.level}</Typography>
@@ -202,7 +202,7 @@ export function HacknetNodeElem(props: IProps): React.ReactElement {
           </TableRow>
           <TableRow>
             <TableCell>
-              <Typography>Cores:</Typography>
+              <Typography>Núcleos:</Typography>
             </TableCell>
             <TableCell>
               <Typography>{node.cores}</Typography>

@@ -60,14 +60,14 @@ export function Toolbar({ editor, onSave, onRun, onBeautify }: IProps) {
     <>
       <Box display="flex" flexDirection="row" sx={{ m: 1 }} alignItems="center">
         <Button startIcon={<SettingsIcon />} onClick={openOptions} sx={{ mr: 1 }}>
-          Options
+          Opciones
         </Button>
         <Button
           onClick={() => {
             onBeautify().catch((error) => console.error(error));
           }}
         >
-          Beautify
+          Formatear
         </Button>
         <Button
           color={isUpdatingRAM ? "secondary" : "primary"}
@@ -82,7 +82,7 @@ export function Toolbar({ editor, onSave, onRun, onBeautify }: IProps) {
               onSave().catch((error) => console.error(error));
             }}
           >
-            Save
+            Guardar
           </Button>
         </Tooltip>
         <Tooltip title={parseKeyCombinationsToString(CurrentKeyBindings[ScriptEditorAction.GoToTerminal])}>
@@ -97,7 +97,7 @@ export function Toolbar({ editor, onSave, onRun, onBeautify }: IProps) {
               onRun().catch((error) => console.error(error));
             }}
           >
-            Run
+            Ejecutar
           </Button>
         </Tooltip>
         <DocumentationAutocomplete
@@ -120,7 +120,7 @@ export function Toolbar({ editor, onSave, onRun, onBeautify }: IProps) {
               textUnderlineOffset: "5px",
             }}
           >
-            NS API documentation
+            Documentación API NS
           </DocumentationLink>
         </Typography>
       </Box>

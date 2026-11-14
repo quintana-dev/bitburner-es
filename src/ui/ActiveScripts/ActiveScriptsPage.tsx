@@ -99,9 +99,9 @@ export function ActiveScriptsPage(): React.ReactElement {
   return (
     <>
       <Typography>
-        This page displays a list of all of your scripts that are currently running across every machine. It also
-        provides information about each script's production. The scripts are categorized by the hostname of the servers
-        on which they are running.
+        Esta página muestra una lista de todos tus scripts que se están ejecutando actualmente en todas las máquinas.
+        También proporciona información sobre la producción de cada script. Los scripts están organizados por el nombre
+        del servidor en el que se ejecutan.
       </Typography>
 
       <ScriptProduction />
@@ -113,14 +113,14 @@ export function ActiveScriptsPage(): React.ReactElement {
           InputProps={{ startAdornment: <Search />, spellCheck: false }}
           size="small"
         />
-        <Typography marginLeft="1em">Servers/page:</Typography>
+        <Typography marginLeft="1em">Servidores/pág:</Typography>
         <Select value={serversPerPage} onChange={changeServersPerPage}>
           <MenuItem value={10}>10</MenuItem>
           <MenuItem value={15}>15</MenuItem>
           <MenuItem value={20}>20</MenuItem>
           <MenuItem value={100}>100</MenuItem>
         </Select>
-        <Typography marginLeft="1em">Scripts/page:</Typography>
+        <Typography marginLeft="1em">Scripts/pág:</Typography>
         <Select value={scriptsPerPage} onChange={changeScriptsPerPage}>
           <MenuItem value={10}>10</MenuItem>
           <MenuItem value={15}>15</MenuItem>
@@ -130,7 +130,7 @@ export function ActiveScriptsPage(): React.ReactElement {
         <Typography
           marginLeft="auto"
           marginRight="1em"
-        >{`${firstServerNumber}-${lastServerNumber} of ${serverData.length}`}</Typography>
+        >{`${firstServerNumber}-${lastServerNumber} de ${serverData.length}`}</Typography>
         <IconButton onClick={() => changePage(0)} disabled={page === 0}>
           <FirstPage />
         </IconButton>

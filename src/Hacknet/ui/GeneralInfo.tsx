@@ -14,35 +14,35 @@ export function GeneralInfo(props: IProps): React.ReactElement {
   return (
     <>
       <Typography>
-        The Hacknet is a global, decentralized network of machines. It is used by hackers all around the world to
-        anonymously share computing power and perform distributed cyberattacks without the fear of being traced.
+        La Hacknet es una red global y descentralizada de máquinas. Es utilizada por hackers de todo el mundo para
+        compartir potencia informática de forma anónima y realizar ciberataques distribuidos sin temor a ser rastreados.
       </Typography>
       <br />
       {!props.hasHacknetServers ? (
         <>
           <Typography>
-            {`Here, you can purchase a Hacknet Node, a specialized machine that can connect ` +
-              `and contribute its resources to the Hacknet network. This allows you to take ` +
-              `a small percentage of profits from hacks performed on the network. Essentially, ` +
-              `you are renting out your Node's computing power.`}
+            {`Aquí puedes comprar un Nodo de Hacknet, una máquina especializada que puede conectarse ` +
+              `y aportar sus recursos a la red Hacknet. Esto te permite obtener ` +
+              `un pequeño porcentaje de las ganancias de los hackeos realizados en la red. En esencia, ` +
+              `estás alquilando la potencia de cálculo de tu Nodo.`}
           </Typography>
           <Typography>
-            {`Each Hacknet Node you purchase will passively earn you money. Each Hacknet Node ` +
-              `can be upgraded in order to increase its computing power and thereby increase ` +
-              `the profit you earn from it.`}
+            {`Cada Nodo de Hacknet que compres te generará dinero pasivamente. Cada Nodo de Hacknet ` +
+              `se puede mejorar para aumentar su potencia informática y, con ello, ` +
+              `las ganancias que obtienes de él.`}
           </Typography>
         </>
       ) : (
         <>
           <Typography>
-            {`Here, you can purchase a Hacknet Server, an upgraded version of the Hacknet Node. ` +
-              `Hacknet Servers will perform computations and operations on the network, earning ` +
-              `you hashes. Hashes can be spent on a variety of different upgrades.`}
+            {`Aquí puedes comprar un Servidor de Hacknet, una versión mejorada del Nodo de Hacknet. ` +
+              `Los Servidores de Hacknet realizarán cálculos y operaciones en la red, ganando ` +
+              `hashes. Los hashes se pueden gastar en una variedad de mejoras diferentes.`}
           </Typography>
           <Typography>
-            {`Hacknet Servers can also be used as servers to run scripts. However, running scripts ` +
-              `on a server will reduce its hash rate (hashes generated per second). A Hacknet Server's hash ` +
-              `rate will be reduced by the percentage of RAM that is being used by that Server to run ` +
+            {`Los Servidores de Hacknet también se pueden utilizar para ejecutar scripts. Sin embargo, ejecutar scripts ` +
+              `en un servidor reducirá su tasa de hashes (hashes generados por segundo). La tasa de hashes de un Servidor de Hacknet ` +
+              `se reducirá según el porcentaje de RAM que ese Servidor esté utilizando para ejecutar ` +
               `scripts.`}
           </Typography>
         </>
