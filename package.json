@@ -1,10 +1,12 @@
 {
-  "name": "bitburner",
+  "name": "bitburner-es",
+  "description": "Bitburner en Español - Edición oficial en español mantenida por quintana.dev",
   "license": "SEE LICENSE IN license.txt",
   "version": "3.0.1",
   "main": "electron-main.js",
   "author": {
-    "name": "Daniel Xie, hydroflame, et al."
+    "name": "Ramiro Quintana (quintana.dev) / Daniel Xie, hydroflame, et al.",
+    "url": "https://quintana.dev.ar"
   },
   "bugs": {
     "url": "https://github.com/bitburner-official/bitburner-src/issues"

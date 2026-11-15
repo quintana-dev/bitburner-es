@@ -53,6 +53,7 @@ import { processDarknet } from "./DarkNet/controllers/NetworkMovement";
 import { hasDarknetAccess } from "./DarkNet/utils/darknetAuthUtils";
 import { initForeignServers } from "./Server/ServerHelpers";
 import { apr1 } from "./Terminal/commands/apr1";
+import { seedSpanishCommunityFiles } from "./localization/es/communityFiles";
 
 declare global {
   // This property is only available in the dev build
@@ -391,6 +392,9 @@ const Engine = {
 
       Engine.start(); // Run main game loop and Scripts loop
     }
+
+    // Seed Spanish community guide and starter scripts onto home server
+    seedSpanishCommunityFiles(Player.getHomeComputer());
 
     // Expose internal objects/functions in the dev build
     if (process.env.NODE_ENV === "development") {
