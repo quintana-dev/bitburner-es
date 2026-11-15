@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://quintana-dev.github.io/bitburner-es/sitemap.xml

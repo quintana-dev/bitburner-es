@@ -10,4 +10,6 @@ mkdir .app
 # Should be all the files needed.
 cp index.html .app
 cp favicon.ico .app
+if [ -f robots.txt ]; then cp robots.txt .app; fi
+if [ -f sitemap.xml ]; then cp sitemap.xml .app; fi
 cp -r dist .app
